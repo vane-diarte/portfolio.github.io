@@ -117,18 +117,46 @@
 		});
 	}
 
-	/* ---------- Marquee infinito ---------- */
+	/* ---------- Carruseles infinitos ----------
+	   La animación desplaza la pista un 50%. Para que el salto sea invisible,
+	   la pista debe contener dos mitades idénticas y ser más ancha que su
+	   contenedor: primero repetimos los ítems hasta cubrir el ancho visible
+	   y recién después duplicamos todo. */
 
-	var track = document.getElementById("marquee-track");
+	function buildLoop(track) {
+		var viewport = track.parentElement;
+		if (!track || !viewport) return;
 
-	if (track) {
 		var originals = Array.prototype.slice.call(track.children);
-		originals.forEach(function (node) {
-			var clone = node.cloneNode(true);
-			clone.setAttribute("aria-hidden", "true");
-			track.appendChild(clone);
-		});
+		if (!originals.length) return;
+
+		function cloneInto(nodes) {
+			nodes.forEach(function (node) {
+				var clone = node.cloneNode(true);
+				clone.setAttribute("aria-hidden", "true");
+				track.appendChild(clone);
+			});
+		}
+
+		// Repetimos hasta que una mitad tape el ancho del contenedor.
+		// El tope de 20 vueltas evita cualquier bucle infinito accidental.
+		var guard = 0;
+		while (track.scrollWidth < viewport.clientWidth * 1.15 && guard < 20) {
+			cloneInto(originals);
+			guard += 1;
+		}
+
+		// Segunda mitad: exactamente lo mismo que la primera.
+		cloneInto(Array.prototype.slice.call(track.children));
 	}
+
+	var loopTracks = [document.getElementById("marquee-track")].concat(
+		Array.prototype.slice.call(document.querySelectorAll("[data-loop]"))
+	);
+
+	loopTracks.forEach(function (track) {
+		if (track) buildLoop(track);
+	});
 
 	/* ---------- Rotador de roles ---------- */
 

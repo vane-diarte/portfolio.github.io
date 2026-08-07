@@ -784,8 +784,11 @@ p {
 .marquee__track {
 	display: flex;
 	width: max-content;
-	gap: 14px;
 	animation: scroll-x 42s linear infinite;
+}
+
+.marquee__track > * {
+	margin-right: 14px;
 }
 
 .marquee:hover .marquee__track {
@@ -1396,10 +1399,41 @@ p {
 
 /* ---------- 11. Tools ---------- */
 
-.tools {
+.tools-carousel {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
 	gap: 14px;
+}
+
+.tools-row {
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+	mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.tools-track {
+	display: flex;
+	width: max-content;
+	animation: scroll-x 46s linear infinite;
+}
+
+/* El margen (en vez de gap) mantiene el patrón periódico:
+   así el salto del bucle es invisible. */
+.tools-track > * {
+	margin-right: 14px;
+}
+
+.tools-row--reverse .tools-track {
+	animation-direction: reverse;
+	animation-duration: 54s;
+}
+
+.tools-carousel:hover .tools-track {
+	animation-play-state: paused;
+}
+
+.tools-track .tool {
+	width: 148px;
+	flex: none;
 }
 
 .tool {
@@ -1742,6 +1776,17 @@ p {
 	.reveal {
 		opacity: 1;
 		transform: none;
+	}
+
+	/* Sin animación, los carruseles se recorren a mano. */
+	.marquee__track,
+	.tools-track {
+		transform: none !important;
+	}
+
+	.marquee,
+	.tools-row {
+		overflow-x: auto;
 	}
 }
 
