@@ -134,6 +134,11 @@
 			nodes.forEach(function (node) {
 				var clone = node.cloneNode(true);
 				clone.setAttribute("aria-hidden", "true");
+				// Dentro de una pista animada, loading="lazy" puede no dispararse
+				// nunca y dejar huecos: los clones se cargan siempre.
+				Array.prototype.forEach.call(clone.querySelectorAll("img"), function (img) {
+					img.loading = "eager";
+				});
 				track.appendChild(clone);
 			});
 		}

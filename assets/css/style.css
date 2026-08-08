@@ -28,6 +28,12 @@
 	--glow-2: rgba(28, 127, 150, 0.16);
 	--grain-opacity: 0.035;
 
+	/* Vuelve monocromáticos los logos del marquee superior.
+	   Los valores están calibrados para que se lean tanto los iconos de color
+	   (Ai, Ps, Ae) como los que son negros sobre transparente (GitHub, Notion). */
+	--logo-filter: grayscale(1) brightness(0.55) contrast(1.1);
+	--logo-opacity: 0.55;
+
 	--font-sans: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 	--font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
 
@@ -65,6 +71,9 @@
 	--glow-1: rgba(255, 122, 88, 0.22);
 	--glow-2: rgba(75, 196, 221, 0.16);
 	--grain-opacity: 0.05;
+
+	--logo-filter: grayscale(1) brightness(2.2) contrast(0.35);
+	--logo-opacity: 0.85;
 }
 
 /* ---------- 2. Base ---------- */
@@ -788,7 +797,7 @@ p {
 }
 
 .marquee__track > * {
-	margin-right: 14px;
+	margin-right: 22px;
 }
 
 .marquee:hover .marquee__track {
@@ -799,28 +808,37 @@ p {
 	to { transform: translateX(-50%); }
 }
 
+/* Sin tarjeta ni recuadro: solo el logo monocromático y su nombre.
+   Al pasar el mouse recupera el color. */
 .chip {
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
-	padding: 9px 18px 9px 9px;
-	border: 1px solid var(--line);
-	border-radius: var(--r-pill);
-	background: var(--bg-elev);
+	padding: 9px 10px;
 	font-size: 14.5px;
 	font-weight: 500;
 	white-space: nowrap;
-	color: var(--text-soft);
+	color: var(--text-mute);
+	transition: color 0.4s var(--ease);
 }
 
 .chip img {
-	width: 30px;
-	height: 30px;
+	width: 28px;
+	height: 28px;
 	object-fit: contain;
-	padding: 4px;
-	border-radius: 8px;
-	background: var(--tile);
 	flex: none;
+	filter: var(--logo-filter);
+	opacity: var(--logo-opacity);
+	transition: filter 0.4s var(--ease), opacity 0.4s var(--ease);
+}
+
+.chip:hover {
+	color: var(--text);
+}
+
+.chip:hover img {
+	filter: none;
+	opacity: 1;
 }
 
 /* ---------- 8. Services ---------- */
@@ -1420,11 +1438,6 @@ p {
    así el salto del bucle es invisible. */
 .tools-track > * {
 	margin-right: 14px;
-}
-
-.tools-row--reverse .tools-track {
-	animation-direction: reverse;
-	animation-duration: 54s;
 }
 
 .tools-carousel:hover .tools-track {
