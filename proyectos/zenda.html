@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Zenda — Plataforma de eventos y talleres | Vanessa Diarte</title>
+
+	<meta name="description" content="Caso de estudio: identidad de marca, sistema de diseño, web pública, dashboard de gestión y CRM para Zenda, una plataforma de eventos y talleres culturales." />
+	<meta name="author" content="Vanessa Diarte" />
+	<meta name="theme-color" content="#0a0b0d" />
+	<link rel="canonical" href="https://vane-diarte.github.io/portfolio.github.io/proyectos/zenda.html" />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="es_PY" />
+	<meta property="og:title" content="Zenda — Plataforma de eventos y talleres" />
+	<meta property="og:description" content="Identidad de marca, design system, web, dashboard y CRM para una plataforma de talleres culturales." />
+	<meta property="og:image" content="https://vane-diarte.github.io/portfolio.github.io/images/work/6.png" />
+	<meta property="og:url" content="https://vane-diarte.github.io/portfolio.github.io/proyectos/zenda.html" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<link rel="icon" href="../images/vanediarte.png" type="image/png" />
+	<link rel="apple-touch-icon" href="../images/vanediarte.png" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../assets/css/style.css" />
+
+	<script>
+		// Aplicado antes del render para evitar parpadeo de tema.
+		(function () {
+			try {
+				var saved = localStorage.getItem("vd-theme");
+				if (saved) document.documentElement.dataset.theme = saved;
+			} catch (e) {}
+		})();
+	</script>
+</head>
+
+<body>
+	<a class="skip-link" href="#caso">Saltar al contenido</a>
+
+	<!-- Fondo ambiental -->
+	<div class="fx" aria-hidden="true">
+		<div class="fx__glow fx__glow--1"></div>
+		<div class="fx__glow fx__glow--2"></div>
+		<div class="fx__grain"></div>
+	</div>
+
+	<!-- ============ NAV ============ -->
+	<header class="nav" id="nav">
+		<div class="nav__inner">
+			<a class="nav__brand" href="../index.html">
+				<span class="nav__mark" aria-hidden="true">VD</span>
+				<span>Vanessa Diarte</span>
+			</a>
+
+			<nav aria-label="Navegación principal">
+				<ul class="nav__links">
+					<li><a href="../index.html#inicio">Inicio</a></li>
+					<li><a href="../index.html#servicios">Servicios</a></li>
+					<li><a href="../index.html#proyectos">Proyectos</a></li>
+					<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				</ul>
+			</nav>
+
+			<div class="nav__actions">
+				<button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro">
+					<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+					<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.4A8.6 8.6 0 1 1 9.6 3.5a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+				</button>
+
+				<button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+				</button>
+
+				<a class="btn btn--primary btn--sm nav__cta" href="../index.html#contacto">
+					Trabajemos juntos
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+			</div>
+		</div>
+
+		<div class="nav__drawer" id="nav-drawer">
+			<ul>
+				<li><a href="../index.html#inicio">Inicio</a></li>
+				<li><a href="../index.html#servicios">Servicios</a></li>
+				<li><a href="../index.html#proyectos">Proyectos</a></li>
+				<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				<li><a href="../index.html#herramientas">Herramientas</a></li>
+			</ul>
+			<a class="btn btn--primary" href="../index.html#contacto">Trabajemos juntos</a>
+		</div>
+	</header>
+
+	<main id="caso">
+		<!-- ============ PORTADA ============ -->
+		<section class="case-hero">
+			<div class="container">
+				<a class="case-back" href="../index.html#proyectos">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+					Volver a proyectos
+				</a>
+
+				<div class="project__tags">
+					<span class="tag tag--accent">UX/UI</span>
+					<span class="tag">Identidad de marca</span>
+					<span class="tag">Design system</span>
+					<span class="tag">Producto digital</span>
+				</div>
+
+				<h1>Zenda, una plataforma para la <span class="serif accent">agenda cultural</span></h1>
+
+				<p class="case-hero__lead">
+					<!-- ESCRIBÍ ACÁ: reemplazá este párrafo por tu resumen en una o dos frases.
+					     Es lo primero que lee alguien que te está evaluando. -->
+					Un proyecto integral que abarca desde el isotipo hasta el CRM: identidad de
+					marca, sistema de diseño, sitio público para descubrir talleres y un panel
+					de gestión para quienes los organizan.
+				</p>
+
+				<dl class="case-meta">
+					<div>
+						<dt>Mi rol</dt>
+						<dd>Diseño UX/UI, identidad de marca y sistema de diseño</dd>
+					</div>
+					<div>
+						<dt>Alcance</dt>
+						<dd>Marca, design system, web pública, dashboard y CRM</dd>
+					</div>
+					<div>
+						<dt>Herramientas</dt>
+						<dd>Figma, Illustrator</dd>
+					</div>
+					<div>
+						<dt>Año</dt>
+						<!-- ESCRIBÍ ACÁ: poné el año y borrá el span -->
+						<dd><span class="case-fill">Completar</span></dd>
+					</div>
+				</dl>
+
+				<div class="case-cover">
+					<img src="../images/work/6.png" alt="Identidad de marca de Zenda: isotipo y logotipo" width="500" height="500" />
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 01 · CONTEXTO ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">01 — Contexto</span>
+					<div>
+						<h2>El punto de partida</h2>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Contá acá: ¿para quién era Zenda? ¿Fue un proyecto de cliente,
+								personal o académico? ¿Qué problema tenían las personas que
+								organizan talleres antes de esto, y qué les pasaba a quienes
+								querían encontrarlos? Tres o cuatro frases alcanzan.
+							</p>
+						</div>
+
+						<div class="case-prose">
+							<p>
+								Zenda es una plataforma que conecta dos lados de un mismo problema:
+								<strong>quien busca un taller</strong> —cerámica, bordado ñandutí,
+								yoga, canto— y <strong>quien lo organiza</strong> y necesita
+								administrar inscripciones, pagos y asistencias sin perderse en
+								planillas y mensajes sueltos.
+							</p>
+							<p>
+								Por eso el proyecto no se resolvía con una sola pantalla. Requería
+								una marca que funcionara en ese contexto cultural, un sistema de
+								componentes que sostuviera productos distintos, y tres interfaces
+								con necesidades muy diferentes entre sí.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 02 · IDENTIDAD ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">02 — Identidad</span>
+					<div>
+						<h2>Una marca que sugiere encuentro</h2>
+
+						<div class="case-prose">
+							<p>
+								El isotipo parte de dos formas entrelazadas que se cruzan sin
+								cerrarse: la idea de encuentro entre quien enseña y quien aprende.
+								La paleta combina un <strong>turquesa</strong> sereno con un
+								<strong>coral</strong> cálido, para escapar del gris institucional
+								sin caer en lo infantil.
+							</p>
+						</div>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Si tomaste alguna decisión concreta que valga contar —por qué ese
+								isotipo y no otro, qué alternativas descartaste, de dónde salió el
+								nombre— este es el lugar. Es lo que más valoran quienes contratan.
+							</p>
+						</div>
+
+						<figure class="case-figure case-figure--single">
+							<button class="case-figure__frame" type="button" data-full="../images/work/6.png" data-caption="Zenda — Identidad de marca">
+								<img src="../images/work/6.png" alt="Isotipo y logotipo de Zenda en sus distintas versiones" loading="lazy" width="500" height="500" />
+							</button>
+							<figcaption><b>Identidad.</b> Isotipo, versión vertical y logotipo horizontal.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 03 · DESIGN SYSTEM ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">03 — Sistema</span>
+					<div>
+						<h2>Un design system para sostener tres productos</h2>
+
+						<div class="case-prose">
+							<p>
+								Con una web pública, un dashboard y un CRM conviviendo, mantener
+								coherencia a mano era inviable. Documenté los componentes con todos
+								sus estados —<strong>default, hover, activo y deshabilitado</strong>—
+								para que cualquier pantalla nueva se armara con piezas ya resueltas.
+							</p>
+							<ul>
+								<li>Controles de selección: checkbox, radio buttons y toggles</li>
+								<li>Indicadores de progreso y estados de carga</li>
+								<li>Reglas de uso documentadas junto a cada componente</li>
+							</ul>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/3.png" data-caption="Zenda — Design system">
+									<img src="../images/work/3.png" alt="Vista general del design system de Zenda" loading="lazy" width="500" height="500" />
+								</button>
+								<figcaption><b>Biblioteca.</b> Componentes organizados y documentados.</figcaption>
+							</figure>
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/7.png" data-caption="Zenda — Controles del design system">
+									<img src="../images/work/7.png" alt="Controles del design system: checkbox, radio buttons, toggles y slider" loading="lazy" width="500" height="500" />
+								</button>
+								<figcaption><b>Controles.</b> Cada componente con sus cuatro estados.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 04 · WEB PÚBLICA ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">04 — Descubrir</span>
+					<div>
+						<h2>La web: encontrar un taller sin fricción</h2>
+
+						<div class="case-prose">
+							<p>
+								La pantalla pública se ordena alrededor de una sola pregunta:
+								<strong>¿qué puedo hacer y cuándo?</strong> Por eso los filtros de
+								categoría, fecha y búsqueda están arriba de todo, y cada tarjeta
+								responde de un vistazo lo que la persona necesita para decidir:
+								precio, cantidad de clases, fecha y quién lo dicta.
+							</p>
+							<p>
+								La separación entre <strong>«Eventos destacados»</strong> y
+								<strong>«Lo que se viene»</strong> resuelve dos intenciones
+								distintas: la de quien viene a explorar y la de quien ya sabe que
+								quiere anotarse a algo pronto.
+							</p>
+						</div>
+
+						<figure class="case-figure case-figure--single">
+							<button class="case-figure__frame" type="button" data-full="../images/work/5.png" data-caption="Zenda — Sitio web público">
+								<img src="../images/work/5.png" alt="Sitio web público de Zenda con la agenda de talleres" loading="lazy" width="500" height="500" />
+							</button>
+							<figcaption><b>Agenda cultural.</b> Filtros, eventos destacados y próximos talleres.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 05 · GESTIÓN ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">05 — Gestionar</span>
+					<div>
+						<h2>Dashboard y CRM: el trabajo invisible</h2>
+
+						<div class="case-prose">
+							<p>
+								El panel responde lo que un organizador necesita saber apenas entra:
+								<strong>ingresos del mes, asistentes totales, eventos activos y
+								cancelaciones</strong>, con el próximo evento siempre a la vista.
+								Las barras de ocupación por taller permiten detectar de un golpe
+								cuál se está llenando y cuál no.
+							</p>
+							<p>
+								El CRM baja al detalle: quién se inscribió, si pagó, cuántos eventos
+								asistió antes y cómo contactarlo. Los estados
+								—<strong>pagado, pendiente, cancelado</strong>— usan color y
+								etiqueta a la vez, para que no dependan solo de la vista.
+							</p>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/2.png" data-caption="Zenda — Dashboard de gestión">
+									<img src="../images/work/2.png" alt="Dashboard de Zenda con métricas de ingresos, asistentes y eventos" loading="lazy" width="500" height="500" />
+								</button>
+								<figcaption><b>Dashboard.</b> Métricas del mes y ocupación por taller.</figcaption>
+							</figure>
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/1.png" data-caption="Zenda — CRM de asistentes">
+									<img src="../images/work/1.png" alt="CRM de asistentes de Zenda con estados de pago" loading="lazy" width="500" height="500" />
+								</button>
+								<figcaption><b>CRM.</b> Asistentes por taller, con estado de pago y contacto.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 06 · CIERRE ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">06 — Cierre</span>
+					<div>
+						<h2>Resultados y aprendizajes</h2>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Si el proyecto se implementó y tenés números, van acá. Si no, sirve
+								igual —o más— contar qué aprendiste: qué harías distinto, qué te
+								costó más, qué decisión te sorprendió. Esta sección es la que más
+								se lee en una entrevista.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ============ SIGUIENTE ============ -->
+	<section class="case-next">
+		<div class="container case-next__inner">
+			<div>
+				<h3>¿Te interesa cómo trabajo?</h3>
+				<p>Escribime y charlamos sobre tu proyecto.</p>
+			</div>
+			<div class="hero__actions" style="margin-top:0">
+				<a class="btn btn--primary" href="../index.html#contacto">
+					Contactarme
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+				<a class="btn btn--ghost" href="../index.html#proyectos">Ver más proyectos</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="footer">
+		<div class="container footer__inner">
+			<p>© <span id="year">2026</span> Vanessa Diarte — Diseñado y desarrollado con cariño desde Paraguay.</p>
+			<a class="to-top" href="#caso">
+				Volver arriba
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+			</a>
+		</div>
+	</footer>
+
+	<!-- ============ LIGHTBOX ============ -->
+	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la imagen">
+		<button class="lightbox__close" id="lightbox-close" type="button" aria-label="Cerrar">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+		</button>
+		<img id="lightbox-img" alt="" />
+		<p class="lightbox__caption" id="lightbox-caption"></p>
+	</div>
+
+	<script src="../assets/js/app.js" defer></script>
+</body>
+</html>

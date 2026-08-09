@@ -89,7 +89,15 @@
 
 	/* ---------- Link activo según la sección visible ---------- */
 
-	var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav__links a"));
+	// Solo los enlaces internos (#seccion) apuntan a una sección de ESTA página.
+	// En las páginas de proyecto los enlaces son "../index.html#seccion", que no
+	// es un selector válido y haría fallar a querySelector.
+	var navLinks = Array.prototype.slice
+		.call(document.querySelectorAll(".nav__links a"))
+		.filter(function (link) {
+			return (link.getAttribute("href") || "").charAt(0) === "#";
+		});
+
 	var sections = navLinks
 		.map(function (link) {
 			return document.querySelector(link.getAttribute("href"));

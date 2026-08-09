@@ -1602,6 +1602,325 @@ p {
 	height: 14px;
 }
 
+/* =========================================================
+   Páginas de proyecto (proyectos/*.html)
+   ========================================================= */
+
+.case-hero {
+	position: relative;
+	z-index: 1;
+	padding-top: clamp(120px, 15vw, 168px);
+	padding-bottom: clamp(32px, 5vw, 52px);
+}
+
+.case-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 26px;
+	font-size: 14.5px;
+	font-weight: 500;
+	color: var(--text-mute);
+	transition: gap 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.case-back:hover {
+	gap: 13px;
+	color: var(--accent);
+}
+
+.case-back svg {
+	width: 15px;
+	height: 15px;
+}
+
+.case-hero h1 {
+	max-width: 18ch;
+	font-size: clamp(2.3rem, 6vw, 4rem);
+	letter-spacing: -0.045em;
+	line-height: 1;
+}
+
+.case-hero__lead {
+	margin-top: 24px;
+	max-width: 58ch;
+	color: var(--text-soft);
+	font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+}
+
+/* Ficha técnica */
+
+.case-meta {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 1px;
+	margin: clamp(36px, 5vw, 52px) 0 0;
+	border: 1px solid var(--line);
+	border-radius: var(--r-lg);
+	background: var(--line);
+	overflow: hidden;
+}
+
+.case-meta > div {
+	padding: 22px 24px;
+	background: var(--bg-elev);
+}
+
+.case-meta dt {
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-mute);
+}
+
+.case-meta dd {
+	margin: 9px 0 0;
+	font-size: 15.5px;
+	font-weight: 450;
+	letter-spacing: -0.02em;
+	line-height: 1.4;
+}
+
+/* Portada */
+
+.case-cover {
+	display: grid;
+	place-items: center;
+	margin-top: clamp(28px, 4vw, 44px);
+	padding: clamp(28px, 5vw, 60px);
+	border: 1px solid var(--line);
+	border-radius: var(--r-xl);
+	background:
+		radial-gradient(80% 120% at 50% 0%, var(--accent-soft), transparent 65%),
+		var(--bg-elev);
+	overflow: hidden;
+}
+
+.case-cover img {
+	width: 100%;
+	max-width: 560px;
+	height: auto;
+	border-radius: var(--r-lg);
+	box-shadow: var(--shadow-lg);
+}
+
+/* Bloques de contenido */
+
+.case-block {
+	position: relative;
+	z-index: 1;
+	padding-block: clamp(48px, 7vw, 88px);
+}
+
+.case-block__head {
+	display: grid;
+	grid-template-columns: 190px minmax(0, 1fr);
+	gap: clamp(20px, 4vw, 48px);
+	align-items: start;
+}
+
+.case-block__num {
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--accent);
+	padding-top: 8px;
+}
+
+.case-block h2 {
+	font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+	max-width: 20ch;
+}
+
+.case-prose {
+	margin-top: 20px;
+	max-width: 62ch;
+}
+
+.case-prose p {
+	color: var(--text-soft);
+	font-size: clamp(1rem, 1.5vw, 1.09rem);
+}
+
+.case-prose p + p {
+	margin-top: 16px;
+}
+
+.case-prose strong {
+	color: var(--text);
+	font-weight: 550;
+}
+
+.case-prose ul {
+	margin: 18px 0 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 10px;
+}
+
+.case-prose li {
+	position: relative;
+	padding-left: 26px;
+	color: var(--text-soft);
+	font-size: 15.8px;
+}
+
+.case-prose li::before {
+	content: "";
+	position: absolute;
+	left: 6px;
+	top: 0.62em;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--accent);
+}
+
+/* Figuras e imágenes */
+
+.case-figures {
+	display: grid;
+	gap: clamp(16px, 2.4vw, 24px);
+	margin-top: clamp(28px, 4vw, 44px);
+}
+
+.case-figures--2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-figure {
+	margin: 0;
+}
+
+/* Las capturas son de 500 px: sin este tope se agrandarían y se verían
+   borrosas en las figuras a ancho completo. */
+.case-figure--single {
+	margin-top: clamp(28px, 4vw, 44px);
+	max-width: 560px;
+}
+
+.case-figure__frame {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: var(--r-lg);
+	background: var(--bg-sunken);
+	overflow: hidden;
+	cursor: zoom-in;
+	position: relative;
+	transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease),
+		transform 0.4s var(--ease);
+}
+
+.case-figure__frame:hover {
+	transform: translateY(-4px);
+	border-color: var(--line-strong);
+	box-shadow: var(--shadow-lg);
+}
+
+.case-figure__frame img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.case-figure figcaption {
+	margin-top: 12px;
+	font-size: 14px;
+	color: var(--text-mute);
+	line-height: 1.5;
+}
+
+.case-figure figcaption b {
+	color: var(--text-soft);
+	font-weight: 550;
+}
+
+/* Marca un dato suelto que falta completar */
+.case-fill {
+	color: var(--accent);
+	border-bottom: 1.5px dashed var(--accent);
+	font-weight: 500;
+}
+
+/* Recuadro de pendiente: se ve a propósito para que no se publique sin querer */
+
+.case-todo {
+	margin-top: 24px;
+	padding: 20px 22px;
+	border: 1.5px dashed var(--accent);
+	border-radius: var(--r-md);
+	background: var(--accent-soft);
+	max-width: 62ch;
+}
+
+.case-todo b {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+.case-todo p {
+	color: var(--text-soft);
+	font-size: 15px;
+}
+
+/* Pie de la página de proyecto */
+
+.case-next {
+	position: relative;
+	z-index: 1;
+	padding-block: clamp(40px, 6vw, 72px);
+	border-top: 1px solid var(--line);
+}
+
+.case-next__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.case-next h3 {
+	font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.case-next p {
+	margin-top: 8px;
+	color: var(--text-soft);
+	font-size: 15.5px;
+}
+
+@media (max-width: 900px) {
+	.case-meta {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.case-block__head {
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+
+	.case-block__num {
+		padding-top: 0;
+	}
+}
+
+@media (max-width: 640px) {
+	.case-figures--2 {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* ---------- 14. Lightbox ---------- */
 
 .lightbox {
