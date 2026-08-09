@@ -1744,7 +1744,8 @@ p {
 	font-size: clamp(1rem, 1.5vw, 1.09rem);
 }
 
-.case-prose p + p {
+.case-prose p + p,
+.case-prose ul + p {
 	margin-top: 16px;
 }
 
@@ -1838,6 +1839,45 @@ p {
 .case-figure figcaption b {
 	color: var(--text-soft);
 	font-weight: 550;
+}
+
+/* Hueco para una imagen que todavía no se subió */
+
+.case-slot {
+	display: grid;
+	place-content: center;
+	justify-items: center;
+	gap: 10px;
+	min-height: 220px;
+	padding: 28px 24px;
+	border: 1.5px dashed var(--line-strong);
+	border-radius: var(--r-lg);
+	background: var(--bg-sunken);
+	text-align: center;
+}
+
+.case-slot svg {
+	width: 24px;
+	height: 24px;
+	color: var(--text-mute);
+}
+
+.case-slot span {
+	font-size: 13.5px;
+	color: var(--text-mute);
+	max-width: 34ch;
+	line-height: 1.5;
+}
+
+.case-slot code {
+	display: inline-block;
+	margin-top: 4px;
+	padding: 3px 9px;
+	border-radius: 6px;
+	background: var(--accent-soft);
+	color: var(--accent);
+	font-size: 12.5px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* Marca un dato suelto que falta completar */

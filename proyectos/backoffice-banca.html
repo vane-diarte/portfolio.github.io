@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Backoffice de banca — Sistema interno | Vanessa Diarte</title>
+
+	<meta name="description" content="Caso de estudio: investigación con user personas, mapa de roles y permisos, wireframes, design system y prototipo para el backoffice de una entidad financiera." />
+	<meta name="author" content="Vanessa Diarte" />
+	<meta name="theme-color" content="#0a0b0d" />
+	<link rel="canonical" href="https://vane-diarte.github.io/portfolio.github.io/proyectos/backoffice-banca.html" />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="es_PY" />
+	<meta property="og:title" content="Backoffice de banca — Sistema interno" />
+	<meta property="og:description" content="De la investigación al prototipo: un año diseñando el sistema interno de una entidad financiera." />
+	<meta property="og:image" content="https://vane-diarte.github.io/portfolio.github.io/images/work/Solicitudes-Banca-Persona.png" />
+	<meta property="og:url" content="https://vane-diarte.github.io/portfolio.github.io/proyectos/backoffice-banca.html" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<link rel="icon" href="../images/vanediarte.png" type="image/png" />
+	<link rel="apple-touch-icon" href="../images/vanediarte.png" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../assets/css/style.css" />
+
+	<script>
+		// Aplicado antes del render para evitar parpadeo de tema.
+		(function () {
+			try {
+				var saved = localStorage.getItem("vd-theme");
+				if (saved) document.documentElement.dataset.theme = saved;
+			} catch (e) {}
+		})();
+	</script>
+</head>
+
+<body>
+	<a class="skip-link" href="#caso">Saltar al contenido</a>
+
+	<!-- Fondo ambiental -->
+	<div class="fx" aria-hidden="true">
+		<div class="fx__glow fx__glow--1"></div>
+		<div class="fx__glow fx__glow--2"></div>
+		<div class="fx__grain"></div>
+	</div>
+
+	<!-- ============ NAV ============ -->
+	<header class="nav" id="nav">
+		<div class="nav__inner">
+			<a class="nav__brand" href="../index.html">
+				<span class="nav__mark" aria-hidden="true">VD</span>
+				<span>Vanessa Diarte</span>
+			</a>
+
+			<nav aria-label="Navegación principal">
+				<ul class="nav__links">
+					<li><a href="../index.html#inicio">Inicio</a></li>
+					<li><a href="../index.html#servicios">Servicios</a></li>
+					<li><a href="../index.html#proyectos">Proyectos</a></li>
+					<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				</ul>
+			</nav>
+
+			<div class="nav__actions">
+				<button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro">
+					<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+					<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.4A8.6 8.6 0 1 1 9.6 3.5a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+				</button>
+
+				<button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+				</button>
+
+				<a class="btn btn--primary btn--sm nav__cta" href="../index.html#contacto">
+					Trabajemos juntos
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+			</div>
+		</div>
+
+		<div class="nav__drawer" id="nav-drawer">
+			<ul>
+				<li><a href="../index.html#inicio">Inicio</a></li>
+				<li><a href="../index.html#servicios">Servicios</a></li>
+				<li><a href="../index.html#proyectos">Proyectos</a></li>
+				<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				<li><a href="../index.html#herramientas">Herramientas</a></li>
+			</ul>
+			<a class="btn btn--primary" href="../index.html#contacto">Trabajemos juntos</a>
+		</div>
+	</header>
+
+	<main id="caso">
+		<!-- ============ PORTADA ============ -->
+		<section class="case-hero">
+			<div class="container">
+				<a class="case-back" href="../index.html#proyectos">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+					Volver a proyectos
+				</a>
+
+				<div class="project__tags">
+					<span class="tag tag--accent">UX Research</span>
+					<span class="tag">Arquitectura de información</span>
+					<span class="tag">Design system</span>
+					<span class="tag">Prototipo</span>
+				</div>
+
+				<h1>Backoffice de banca: del <span class="serif accent">relevamiento</span> al sistema de diseño</h1>
+
+				<p class="case-hero__lead">
+					<!-- ESCRIBÍ ACÁ: si querés, reemplazá este resumen por el tuyo. -->
+					Un año de trabajo continuo sobre el sistema interno de una entidad financiera:
+					entender cómo trabajaban siete perfiles distintos, rediseñar la arquitectura
+					de permisos, documentar cada componente y llevarlo hasta un prototipo navegable.
+				</p>
+
+				<dl class="case-meta">
+					<div>
+						<dt>Mi rol</dt>
+						<dd>Diseño UX/UI — proyecto liderado de inicio a fin</dd>
+					</div>
+					<div>
+						<dt>Alcance</dt>
+						<dd>Investigación, wireframes, design system y prototipo</dd>
+					</div>
+					<div>
+						<dt>Duración</dt>
+						<dd>Más de un año, en cuatro etapas</dd>
+					</div>
+					<div>
+						<dt>Herramientas</dt>
+						<dd>Figma</dd>
+					</div>
+				</dl>
+
+				<div class="case-todo">
+					<b>Antes de publicar — decidí esto</b>
+					<p>
+						En tu web actual describís al cliente como «una entidad financiera» sin
+						nombrarlo, y acá mantuve ese criterio. Si tu contrato te permite
+						mencionarlo, ganás mucha credibilidad nombrándolo. Consultalo antes de
+						cambiarlo: es más fácil agregar el nombre después que sacarlo una vez
+						publicado.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 01 · CONTEXTO ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">01 — Contexto</span>
+					<div>
+						<h2>Un sistema que usan siete perfiles distintos</h2>
+
+						<div class="case-prose">
+							<p>
+								El backoffice es la herramienta con la que el personal del banco
+								administra a los clientes: aprueba solicitudes de alta, activa o
+								bloquea usuarios, gestiona dispositivos seguros y genera reportes.
+								No lo usa una persona: lo usan <strong>siete roles</strong> con
+								permisos y responsabilidades muy distintas.
+							</p>
+							<p>
+								Esa es la dificultad central del proyecto. Un registrador, un
+								bloqueador y un operador de reportes entran al mismo sistema pero
+								necesitan ver cosas diferentes, y un permiso mal asignado en un
+								contexto bancario no es una molestia: es un riesgo.
+							</p>
+						</div>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								¿Qué estaba fallando antes del rediseño? ¿Había un sistema viejo,
+								procesos en planilla, pantallas heredadas? Contá el punto de
+								partida concreto y por qué se decidió encarar el proyecto.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 02 · INVESTIGACIÓN ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">02 — Investigación</span>
+					<div>
+						<h2>Relevamiento: entender antes de dibujar</h2>
+
+						<div class="case-prose">
+							<p>
+								La primera etapa no produjo ni una pantalla. Se fue en entender el
+								sistema tal como era y cómo lo usaba cada perfil. De ahí salieron
+								cuatro entregables:
+							</p>
+							<ul>
+								<li>
+									<strong>Siete user personas</strong>, una por rol: registrador,
+									administrador de usuarios, bloqueador, operador, limitador,
+									gestor de dispositivos y reportes de banca empresa. Cada una con
+									sus objetivos, frustraciones y comportamientos reales
+								</li>
+								<li><strong>Mapa de sitio</strong> del sistema existente</li>
+								<li><strong>Mapa de roles y permisos</strong>: quién puede hacer qué</li>
+								<li><strong>Journey map</strong> y un listado de oportunidades de mejora</li>
+							</ul>
+							<p>
+								Las frustraciones que aparecieron marcaron el rumbo de todo lo que
+								vino después: <em>«si me equivoco en los permisos, puedo habilitar
+								funciones que no corresponden»</em>, <em>«necesito que el sistema me
+								diga si algo está mal antes de enviarlo»</em>, <em>«quiero que me
+								muestre la información sin tener que hacer demasiados clics»</em>.
+							</p>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<!-- Cuando tengas la imagen, guardala como images/work/backoffice-personas.png
+								     y reemplazá el <div class="case-slot"> por este bloque:
+
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-personas.png" data-caption="User personas por rol">
+									<img src="../images/work/backoffice-personas.png" alt="User personas de los siete roles del backoffice" loading="lazy" />
+								</button>
+								-->
+								<div class="case-slot">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="m4 18 5-5 4 4 3-2.5 4 3.5"/></svg>
+									<span>Falta la imagen de las <b>user personas</b><br /><code>images/work/backoffice-personas.png</code></span>
+								</div>
+								<figcaption><b>User personas.</b> Un perfil por rol, con objetivos y frustraciones.</figcaption>
+							</figure>
+
+							<figure class="case-figure">
+								<!-- Guardala como images/work/backoffice-roles.png y reemplazá el slot:
+
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-roles.png" data-caption="Mapa de roles y permisos">
+									<img src="../images/work/backoffice-roles.png" alt="Mapa de roles y permisos del backoffice" loading="lazy" />
+								</button>
+								-->
+								<div class="case-slot">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="m4 18 5-5 4 4 3-2.5 4 3.5"/></svg>
+									<span>Falta el <b>mapa de roles y permisos</b> o el <b>journey map</b><br /><code>images/work/backoffice-roles.png</code></span>
+								</div>
+								<figcaption><b>Roles y permisos.</b> Qué puede hacer cada perfil dentro del sistema.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 03 · WIREFRAMES ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">03 — Wireframes</span>
+					<div>
+						<h2>Los flujos, módulo por módulo</h2>
+
+						<div class="case-prose">
+							<p>
+								Con el relevamiento hecho, dibujé los flujos completos de cada
+								módulo antes de tocar un solo color: <strong>login, administrador de
+								usuarios, administrador de roles, solicitudes de alta, usuarios de
+								banca persona, dispositivo seguro y reportes</strong>, más los
+								módulos equivalentes de banca empresa.
+							</p>
+							<p>
+								Trabajar en gris obliga a discutir lo que importa: qué información
+								necesita ver quien decide, en qué orden, y qué pasa cuando algo
+								sale mal. Cada pantalla se conectó con sus estados de error y
+								confirmación, para que el flujo se pudiera recorrer completo y no
+								quedaran caminos sin resolver.
+							</p>
+						</div>
+
+						<div class="case-figures">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona-1.png" data-caption="Wireframe — listado de solicitudes">
+									<img src="../images/work/Solicitudes-Banca-Persona-1.png" alt="Wireframe del listado de solicitudes de alta" loading="lazy" width="1920" height="1080" />
+									<span class="nda-badge">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+										Protegido por NDA
+									</span>
+								</button>
+								<figcaption><b>Listado de solicitudes.</b> Filtros y acciones sobre las altas pendientes.</figcaption>
+							</figure>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona.png" data-caption="Wireframe — detalle de registro">
+									<img src="../images/work/Solicitudes-Banca-Persona.png" alt="Wireframe del detalle de un registro de banca persona" loading="lazy" width="1920" height="1080" />
+								</button>
+								<figcaption><b>Detalle del registro.</b> Datos, porcentaje de verificación biométrica e historial de estados.</figcaption>
+							</figure>
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona-2.png" data-caption="Wireframe — dispositivos asociados">
+									<img src="../images/work/Solicitudes-Banca-Persona-2.png" alt="Wireframe de la ficha de dispositivos asociados" loading="lazy" width="1920" height="1080" />
+								</button>
+								<figcaption><b>Dispositivos.</b> Ficha del dispositivo asociado a cada cliente.</figcaption>
+							</figure>
+						</div>
+
+						<div class="case-prose" style="margin-top:28px">
+							<p>
+								El historial de estados —<strong>activado, condicionado,
+								rechazado</strong>— junto al verificador y el comentario resuelve
+								una necesidad concreta que apareció en el relevamiento: poder
+								reconstruir <em>por qué</em> una solicitud terminó como terminó.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 04 · DESIGN SYSTEM ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">04 — Sistema</span>
+					<div>
+						<h2>Un design system para que el equipo no reinvente</h2>
+
+						<div class="case-prose">
+							<p>
+								Con tantos módulos y varias personas construyendo, la consistencia
+								no se sostiene con buena voluntad. Armé un sistema documentado con
+								sus fundamentos —<strong>paleta, tipografía, espaciado, efectos,
+								iconografía y avatares</strong>— y catorce familias de componentes.
+							</p>
+							<ul>
+								<li>Campos de formulario: input, numérico, con label, textarea, estados de ayuda y error</li>
+								<li>Controles de selección, tablas, filtros y barra de búsqueda</li>
+								<li>Navegación: sidebar, header, breadcrumb y links</li>
+								<li>Tarjetas de historial, barras de progreso, botones y galería</li>
+							</ul>
+							<p>
+								Cada componente está documentado con sus estados y sus reglas de
+								uso, para que desarrollo pueda implementarlo sin volver a preguntar
+								y una pantalla nueva se arme con piezas ya resueltas.
+							</p>
+						</div>
+
+						<figure class="case-figure case-figure--single">
+							<!-- Guardala como images/work/backoffice-design-system.png y reemplazá el slot:
+
+							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-design-system.png" data-caption="Design system — componentes documentados">
+								<img src="../images/work/backoffice-design-system.png" alt="Componentes del design system del backoffice" loading="lazy" />
+							</button>
+							-->
+							<div class="case-slot">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="m4 18 5-5 4 4 3-2.5 4 3.5"/></svg>
+								<span>Falta la imagen del <b>design system</b><br /><code>images/work/backoffice-design-system.png</code></span>
+							</div>
+							<figcaption><b>Componentes.</b> Cada familia con sus variantes y estados documentados.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 05 · PROTOTIPO ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">05 — Prototipo</span>
+					<div>
+						<h2>V2: el sistema completo, navegable</h2>
+
+						<div class="case-prose">
+							<p>
+								La última etapa fue llevar todo a un prototipo de alta fidelidad que
+								se pudiera recorrer de punta a punta: <strong>login con sus estados
+								de error y éxito</strong>, los cuatro módulos de banca persona
+								—solicitudes, registros, dispositivos e informes— y los de banca
+								empresa, más la administración de usuarios y roles.
+							</p>
+							<p>
+								Una de las mejoras que salió del relevamiento fueron las
+								<strong>acciones en lote</strong>: poder activar, condicionar o
+								rechazar varias solicitudes a la vez en lugar de una por una. Para
+								quien procesa decenas de altas por día, eso cambia la jornada.
+							</p>
+						</div>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Si hubo alguna decisión difícil en esta etapa —algo que probaste y
+								cambiaste, una discusión con desarrollo, una restricción técnica que
+								te obligó a rediseñar— contala acá. Es lo que distingue a alguien
+								que diseñó de alguien que dibujó.
+							</p>
+						</div>
+
+						<figure class="case-figure case-figure--single">
+							<!-- Guardala como images/work/backoffice-prototipo.png y reemplazá el slot:
+
+							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-prototipo.png" data-caption="Prototipo V2 — flujos conectados">
+								<img src="../images/work/backoffice-prototipo.png" alt="Prototipo V2 del backoffice con los flujos conectados" loading="lazy" />
+							</button>
+							-->
+							<div class="case-slot">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="m4 18 5-5 4 4 3-2.5 4 3.5"/></svg>
+								<span>Falta la imagen del <b>prototipo V2</b><br /><code>images/work/backoffice-prototipo.png</code></span>
+							</div>
+							<figcaption><b>Prototipo V2.</b> Los módulos conectados, con sus estados de error y confirmación.</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 06 · CIERRE ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">06 — Cierre</span>
+					<div>
+						<h2>Resultados y aprendizajes</h2>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Esta es la sección más importante de todo el caso. Algunas preguntas
+								para arrancar: ¿el sistema se implementó? ¿bajaron los errores de
+								permisos o el tiempo de procesamiento? ¿qué te dijo el equipo que lo
+								usa? Y si no hay números: ¿qué aprendiste liderando un proyecto de
+								un año con siete perfiles de usuario en juego?
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ============ SIGUIENTE ============ -->
+	<section class="case-next">
+		<div class="container case-next__inner">
+			<div>
+				<h3>¿Te interesa cómo trabajo?</h3>
+				<p>Escribime y charlamos sobre tu proyecto.</p>
+			</div>
+			<div class="hero__actions" style="margin-top:0">
+				<a class="btn btn--primary" href="../index.html#contacto">
+					Contactarme
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+				<a class="btn btn--ghost" href="zenda.html">Ver el caso de Zenda</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="footer">
+		<div class="container footer__inner">
+			<p>© <span id="year">2026</span> Vanessa Diarte — Diseñado y desarrollado con cariño desde Paraguay.</p>
+			<a class="to-top" href="#caso">
+				Volver arriba
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+			</a>
+		</div>
+	</footer>
+
+	<!-- ============ LIGHTBOX ============ -->
+	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la imagen">
+		<button class="lightbox__close" id="lightbox-close" type="button" aria-label="Cerrar">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+		</button>
+		<img id="lightbox-img" alt="" />
+		<p class="lightbox__caption" id="lightbox-caption"></p>
+	</div>
+
+	<script src="../assets/js/app.js" defer></script>
+</body>
+</html>
