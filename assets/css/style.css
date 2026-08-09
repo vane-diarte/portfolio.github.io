@@ -16,15 +16,20 @@
 	--line: rgba(20, 22, 26, 0.1);
 	--line-strong: rgba(20, 22, 26, 0.18);
 
-	--accent: #e2593a;
+	/* Color de marca. Para cambiarlo, tocá estas tres líneas y --glow-1
+	   (el rgba es el mismo color en rojo, verde, azul).
+	   Alternativa orquídea: #8e43c0 → rgba(142, 67, 192, ...) */
+	--accent: #6d4ac4;
 	--accent-2: #1c7f96;
-	--accent-soft: rgba(226, 89, 58, 0.12);
+	--accent-soft: rgba(109, 74, 196, 0.13);
+	/* Color del texto que va encima del acento */
+	--on-accent: #ffffff;
 
 	--tile: #ffffff;
 	--shadow-sm: 0 1px 2px rgba(16, 18, 22, 0.05), 0 4px 14px rgba(16, 18, 22, 0.05);
 	--shadow-lg: 0 24px 60px -20px rgba(16, 18, 22, 0.22);
 
-	--glow-1: rgba(226, 89, 58, 0.18);
+	--glow-1: rgba(109, 74, 196, 0.18);
 	--glow-2: rgba(28, 127, 150, 0.16);
 	--grain-opacity: 0.035;
 
@@ -60,15 +65,19 @@
 	--line: rgba(255, 255, 255, 0.1);
 	--line-strong: rgba(255, 255, 255, 0.2);
 
-	--accent: #ff7a58;
+	/* Lila más claro para que resalte sobre el fondo oscuro.
+	   Alternativa orquídea: #cd9bff → rgba(205, 155, 255, ...) */
+	--accent: #b79cff;
 	--accent-2: #4bc4dd;
-	--accent-soft: rgba(255, 122, 88, 0.14);
+	--accent-soft: rgba(183, 156, 255, 0.16);
+	/* Acá el acento es claro, así que encima va texto oscuro */
+	--on-accent: #14161a;
 
 	--tile: #f4f4f5;
 	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
 	--shadow-lg: 0 30px 70px -24px rgba(0, 0, 0, 0.75);
 
-	--glow-1: rgba(255, 122, 88, 0.22);
+	--glow-1: rgba(183, 156, 255, 0.2);
 	--glow-2: rgba(75, 196, 221, 0.16);
 	--grain-opacity: 0.05;
 
@@ -138,7 +147,7 @@ p {
 
 ::selection {
 	background: var(--accent);
-	color: #fff;
+	color: var(--on-accent);
 }
 
 :focus-visible {
@@ -434,7 +443,7 @@ p {
 	height: 30px;
 	border-radius: 9px;
 	background: linear-gradient(135deg, var(--accent), var(--accent-2));
-	color: #fff;
+	color: var(--on-accent);
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: -0.03em;
@@ -1174,7 +1183,7 @@ p {
 	padding: 9px 18px;
 	border-radius: var(--r-pill);
 	background: var(--accent);
-	color: #fff;
+	color: var(--on-accent);
 	font-size: 13px;
 	font-weight: 500;
 }
