@@ -240,6 +240,65 @@
 		}
 	});
 
+	/* ---------- Metodología: pestañas del proceso ----------
+	   Los arcos del círculo hacen lo mismo que las pestañas: son un atajo
+	   visual, no un control aparte. */
+
+	var methodTabs = Array.prototype.slice.call(document.querySelectorAll(".method__tab"));
+
+	if (methodTabs.length) {
+		var methodRings = Array.prototype.slice.call(document.querySelectorAll("[data-ring]"));
+		var methodNodes = Array.prototype.slice.call(document.querySelectorAll("[data-node]"));
+
+		function selectPhase(index, moveFocus) {
+			methodTabs.forEach(function (tab, i) {
+				var on = i === index;
+				tab.setAttribute("aria-selected", String(on));
+				tab.tabIndex = on ? 0 : -1;
+				document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
+			});
+
+			methodRings.forEach(function (ring, i) {
+				ring.classList.toggle("is-active", i === index);
+			});
+
+			methodNodes.forEach(function (node, i) {
+				node.classList.toggle("is-active", i === index);
+			});
+
+			if (moveFocus) methodTabs[index].focus();
+		}
+
+		methodTabs.forEach(function (tab, i) {
+			tab.addEventListener("click", function () {
+				selectPhase(i, false);
+			});
+
+			tab.addEventListener("keydown", function (e) {
+				var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+				if (dir) {
+					e.preventDefault();
+					selectPhase((i + dir + methodTabs.length) % methodTabs.length, true);
+				} else if (e.key === "Home") {
+					e.preventDefault();
+					selectPhase(0, true);
+				} else if (e.key === "End") {
+					e.preventDefault();
+					selectPhase(methodTabs.length - 1, true);
+				}
+			});
+		});
+
+		methodRings.concat(methodNodes).forEach(function (el) {
+			el.addEventListener("click", function () {
+				var n = el.getAttribute("data-ring") || el.getAttribute("data-node");
+				selectPhase(parseInt(n, 10) - 1, false);
+			});
+		});
+
+		selectPhase(0, false);
+	}
+
 	/* ---------- Copiar correo ---------- */
 
 	var copyBtn = document.getElementById("copy-email");

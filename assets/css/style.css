@@ -1501,6 +1501,278 @@ p {
 	letter-spacing: -0.01em;
 }
 
+/* ---------- 11b. Metodología ---------- */
+
+.method {
+	display: grid;
+	grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+	gap: clamp(32px, 5vw, 68px);
+	align-items: center;
+}
+
+/* Diagrama circular */
+
+.method__viz {
+	position: relative;
+	width: 100%;
+	max-width: 420px;
+	justify-self: center;
+}
+
+.method__viz svg {
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.method-ring {
+	fill: none;
+	stroke: var(--line-strong);
+	stroke-width: 20;
+	stroke-linecap: round;
+	transition: stroke 0.45s var(--ease), stroke-width 0.45s var(--ease);
+	cursor: pointer;
+}
+
+.method-ring:hover {
+	stroke: var(--text-mute);
+}
+
+.method-ring.is-active {
+	stroke: var(--accent);
+	stroke-width: 26;
+}
+
+.method-num {
+	font-family: var(--font-sans);
+	font-size: 15px;
+	font-weight: 600;
+	fill: var(--bg);
+	pointer-events: none;
+	transition: fill 0.45s var(--ease);
+}
+
+.method-num-bg {
+	fill: var(--line-strong);
+	transition: fill 0.45s var(--ease);
+	pointer-events: none;
+}
+
+.method-node.is-active .method-num-bg {
+	fill: var(--accent);
+}
+
+.method-node.is-active .method-num {
+	fill: var(--on-accent);
+}
+
+/* Punto que recorre el ciclo: la señal visual de la iteración */
+
+.method-orbit {
+	transform-box: view-box;
+	transform-origin: 200px 200px;
+	animation: method-spin 16s linear infinite;
+}
+
+.method-orbit circle {
+	fill: var(--accent);
+}
+
+@keyframes method-spin {
+	to { transform: rotate(360deg); }
+}
+
+/* El texto y la guía del centro son decorativos: si capturan el puntero,
+   se comen los clics destinados a los arcos. */
+.method-center-title,
+.method-center-sub,
+.method-dashed,
+.method-orbit {
+	pointer-events: none;
+}
+
+.method-center-title {
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-size: 30px;
+	fill: var(--text);
+}
+
+.method-center-sub {
+	font-family: var(--font-sans);
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	fill: var(--text-mute);
+}
+
+.method-dashed {
+	fill: none;
+	stroke: var(--line);
+	stroke-width: 1.5;
+	stroke-dasharray: 4 8;
+}
+
+.method-node {
+	cursor: pointer;
+}
+
+/* Panel de fases */
+
+/* Las cuatro fases comparten la misma celda de la grilla: así el alto lo fija
+   la más larga y el círculo de al lado no se mueve al cambiar de pestaña. */
+.method__body {
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+.method__tabs {
+	grid-row: 1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 26px;
+}
+
+.method__tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 16px;
+	border: 1px solid var(--line);
+	border-radius: var(--r-pill);
+	background: var(--bg-elev);
+	font-size: 13.5px;
+	font-weight: 500;
+	color: var(--text-mute);
+	transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+		background 0.3s var(--ease);
+}
+
+.method__tab:hover {
+	color: var(--text);
+	border-color: var(--line-strong);
+}
+
+.method__tab[aria-selected="true"] {
+	background: var(--accent-soft);
+	border-color: transparent;
+	color: var(--accent);
+}
+
+.method__tab i {
+	font-style: normal;
+	font-variant-numeric: tabular-nums;
+	opacity: 0.65;
+}
+
+.method__panel {
+	grid-row: 2;
+	grid-column: 1;
+	transition: opacity 0.35s var(--ease);
+}
+
+/* visibility (en vez de display:none) mantiene el espacio reservado, pero
+   igual saca el panel del foco y de los lectores de pantalla. */
+.method__panel[hidden] {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.method__panel h3 {
+	font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+}
+
+.method__steps {
+	list-style: none;
+	margin: 24px 0 0;
+	padding: 0;
+	display: grid;
+	gap: 2px;
+	counter-reset: paso;
+}
+
+.method__steps li {
+	position: relative;
+	padding: 16px 0 16px 40px;
+	border-top: 1px solid var(--line);
+}
+
+.method__steps li::before {
+	counter-increment: paso;
+	content: counter(paso, decimal-leading-zero);
+	position: absolute;
+	left: 0;
+	top: 17px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	color: var(--accent);
+	font-variant-numeric: tabular-nums;
+}
+
+.method__steps h4 {
+	font-size: 1.02rem;
+	letter-spacing: -0.025em;
+}
+
+.method__steps p {
+	margin-top: 6px;
+	font-size: 14.8px;
+	color: var(--text-soft);
+}
+
+/* Nota sobre metodología ágil */
+
+.method__agile {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	margin-top: clamp(36px, 5vw, 56px);
+	padding: 22px 26px;
+	border: 1px solid var(--line);
+	border-radius: var(--r-lg);
+	background: var(--bg-elev);
+}
+
+.method__agile svg {
+	width: 24px;
+	height: 24px;
+	flex: none;
+	color: var(--accent);
+	margin-top: 2px;
+}
+
+.method__agile p {
+	color: var(--text-soft);
+	font-size: 15.8px;
+	max-width: 78ch;
+}
+
+.method__agile strong {
+	color: var(--text);
+	font-weight: 550;
+}
+
+@media (max-width: 1000px) {
+	.method {
+		grid-template-columns: 1fr;
+	}
+
+	.method__viz {
+		max-width: 340px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.method-orbit {
+		animation: none;
+	}
+}
+
 /* ---------- 12. Contact ---------- */
 
 .contact-card {

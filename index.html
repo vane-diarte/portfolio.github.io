@@ -61,6 +61,7 @@
 					<li><a href="#inicio">Inicio</a></li>
 					<li><a href="#servicios">Servicios</a></li>
 					<li><a href="#proyectos">Proyectos</a></li>
+					<li><a href="#metodologia">Metodología</a></li>
 					<li><a href="#sobre-mi">Sobre mí</a></li>
 				</ul>
 			</nav>
@@ -87,6 +88,7 @@
 				<li><a href="#inicio">Inicio</a></li>
 				<li><a href="#servicios">Servicios</a></li>
 				<li><a href="#proyectos">Proyectos</a></li>
+				<li><a href="#metodologia">Metodología</a></li>
 				<li><a href="#sobre-mi">Sobre mí</a></li>
 				<li><a href="#herramientas">Herramientas</a></li>
 			</ul>
@@ -469,6 +471,155 @@
 
 				</div>
 			</section>
+
+		<!-- ============ METODOLOGÍA ============ -->
+		<section class="section" id="metodologia">
+			<div class="container">
+				<div class="section-head reveal">
+					<span class="eyebrow">Metodología</span>
+					<h2>Cómo trabajo, <span class="serif">iterando</span></h2>
+					<p>
+						Mi proceso no es una línea recta: cada entrega vuelve a alimentar la
+						investigación. Tocá cada fase para ver qué incluye.
+					</p>
+				</div>
+
+				<div class="method reveal">
+					<!-- El diagrama es decorativo: los mismos datos están en las pestañas -->
+					<div class="method__viz">
+						<svg viewBox="0 0 400 400" role="img" aria-label="Diagrama del proceso: cuatro fases que se repiten en ciclo">
+							<circle class="method-dashed" cx="200" cy="200" r="96" />
+
+							<g transform="rotate(-90 200 200)">
+								<circle class="method-ring" data-ring="1" cx="200" cy="200" r="140"
+									stroke-dasharray="195.48 684.17" stroke-dashoffset="-12.22" />
+								<circle class="method-ring" data-ring="2" cx="200" cy="200" r="140"
+									stroke-dasharray="195.48 684.17" stroke-dashoffset="-232.13" />
+								<circle class="method-ring" data-ring="3" cx="200" cy="200" r="140"
+									stroke-dasharray="195.48 684.17" stroke-dashoffset="-452.04" />
+								<circle class="method-ring" data-ring="4" cx="200" cy="200" r="140"
+									stroke-dasharray="195.48 684.17" stroke-dashoffset="-671.95" />
+							</g>
+
+							<g class="method-node" data-node="1">
+								<circle class="method-num-bg" cx="299" cy="101" r="17" />
+								<text class="method-num" x="299" y="101" text-anchor="middle" dominant-baseline="central">01</text>
+							</g>
+							<g class="method-node" data-node="2">
+								<circle class="method-num-bg" cx="299" cy="299" r="17" />
+								<text class="method-num" x="299" y="299" text-anchor="middle" dominant-baseline="central">02</text>
+							</g>
+							<g class="method-node" data-node="3">
+								<circle class="method-num-bg" cx="101" cy="299" r="17" />
+								<text class="method-num" x="101" y="299" text-anchor="middle" dominant-baseline="central">03</text>
+							</g>
+							<g class="method-node" data-node="4">
+								<circle class="method-num-bg" cx="101" cy="101" r="17" />
+								<text class="method-num" x="101" y="101" text-anchor="middle" dominant-baseline="central">04</text>
+							</g>
+
+							<!-- Punto que recorre el ciclo sin detenerse -->
+							<g class="method-orbit">
+								<circle cx="200" cy="60" r="7" />
+							</g>
+
+							<text class="method-center-title" x="200" y="196" text-anchor="middle">Iteración</text>
+							<text class="method-center-sub" x="200" y="222" text-anchor="middle">constante</text>
+						</svg>
+					</div>
+
+					<div class="method__body">
+						<div class="method__tabs" role="tablist" aria-label="Fases del proceso">
+							<button class="method__tab" type="button" role="tab" id="tab-1"
+								aria-controls="fase-1" aria-selected="true">
+								<i>01</i> Descubrimiento
+							</button>
+							<button class="method__tab" type="button" role="tab" id="tab-2"
+								aria-controls="fase-2" aria-selected="false" tabindex="-1">
+								<i>02</i> Definición
+							</button>
+							<button class="method__tab" type="button" role="tab" id="tab-3"
+								aria-controls="fase-3" aria-selected="false" tabindex="-1">
+								<i>03</i> Diseño visual
+							</button>
+							<button class="method__tab" type="button" role="tab" id="tab-4"
+								aria-controls="fase-4" aria-selected="false" tabindex="-1">
+								<i>04</i> Entrega
+							</button>
+						</div>
+
+						<div class="method__panel" id="fase-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+							<h3>Descubrimiento e investigación</h3>
+							<ol class="method__steps">
+								<li>
+									<h4>Análisis y alineación del brief</h4>
+									<p>Despejar dudas antes de avanzar, entender el funcionamiento y detectar lo que no está claro.</p>
+								</li>
+								<li>
+									<h4>Benchmark competitivo</h4>
+									<p>Capturas de flujos completos, análisis de patrones de UX y microcopy, y definición de KPI.</p>
+								</li>
+								<li>
+									<h4>Entrevistas con usuarios</h4>
+									<p>Entrevistas cualitativas con usuarios internos o externos para identificar fricciones y momentos de abandono, y priorizar necesidades.</p>
+								</li>
+							</ol>
+						</div>
+
+						<div class="method__panel" id="fase-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+							<h3>Definición</h3>
+							<ol class="method__steps">
+								<li>
+									<h4>Análisis e insights</h4>
+									<p>Journey maps, user personas, puntos de dolor, construcción del flujo de usuario y creación de wireframes.</p>
+								</li>
+								<li>
+									<h4>Oportunidades e ideas</h4>
+									<p>Design critique: priorización por impacto contra esfuerzo, propuestas iniciales y base para la fase de ideación.</p>
+								</li>
+							</ol>
+						</div>
+
+						<div class="method__panel" id="fase-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+							<h3>Diseño visual y refinamiento</h3>
+							<ol class="method__steps">
+								<li>
+									<h4>Diseño UI en alta fidelidad</h4>
+									<p>Aplicación del sistema de diseño —componentes, tipografías, colores y microinteracciones definitivas— sobre el flujo aprobado.</p>
+								</li>
+								<li>
+									<h4>Validación</h4>
+									<p>Revisión final con negocio, producto y desarrollo para asegurar viabilidad técnica y alineación de objetivos.</p>
+								</li>
+								<li>
+									<h4>Ajustes</h4>
+									<p>Implementación de los cambios y correcciones surgidos en la fase de validación.</p>
+								</li>
+							</ol>
+						</div>
+
+						<div class="method__panel" id="fase-4" role="tabpanel" aria-labelledby="tab-4" tabindex="0" hidden>
+							<h3>Entrega y cierre</h3>
+							<ol class="method__steps">
+								<li>
+									<h4>Hand-off</h4>
+									<p>Preparación del archivo para desarrollo —especificaciones, assets, flujos limpios y links de Figma— más una sesión de alineación con el equipo para resolver dudas.</p>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div class="method__agile reveal">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 1 1-2.5-6"/><path d="M18.5 2.5V6H15"/></svg>
+					<p>
+						Trabajo con <strong>metodología ágil</strong>: entregas cortas, revisión
+						continua con negocio y desarrollo, y ajustes sobre la marcha. El cierre de
+						un ciclo es el punto de partida del siguiente.
+					</p>
+				</div>
+			</div>
+		</section>
 
 		<!-- ============ SOBRE MÍ ============ -->	 
 		<section class="section" id="sobre-mi">
