@@ -1338,6 +1338,62 @@ p {
 	font-size: clamp(1rem, 1.5vw, 1.08rem);
 }
 
+/* Áreas de trabajo actuales. Sin recuadro a propósito: la columna de
+   habilidades de al lado ya son tarjetas, y dos bloques con borde competían. */
+
+.about__areas {
+	list-style: none;
+	margin: 22px 0 4px;
+	padding: 0;
+	display: grid;
+	gap: 0;
+}
+
+.about__areas li {
+	display: flex;
+	gap: 14px;
+	padding: 15px 4px;
+	border-top: 1px solid var(--line);
+	transition: padding-left 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.about__areas li:last-child {
+	border-bottom: 1px solid var(--line);
+}
+
+.about__areas li:hover {
+	padding-left: 12px;
+	background: var(--bg-elev);
+}
+
+.about__areas svg {
+	width: 20px;
+	height: 20px;
+	flex: none;
+	margin-top: 2px;
+	color: var(--accent);
+}
+
+.about__areas b {
+	display: block;
+	font-size: 15.5px;
+	font-weight: 550;
+	letter-spacing: -0.02em;
+	color: var(--text);
+}
+
+.about__areas span {
+	display: block;
+	margin-top: 3px;
+	font-size: 14.8px;
+	color: var(--text-soft);
+}
+
+/* El párrafo que sigue a la lista necesita su propio aire */
+.about__areas + p {
+	margin-top: 24px;
+}
+
 .about__quote {
 	margin-top: 30px;
 	padding: 22px 26px;
@@ -1355,6 +1411,15 @@ p {
 .skills {
 	display: grid;
 	gap: 12px;
+}
+
+/* La columna de texto es bastante más larga: dejamos las habilidades fijas
+   para que acompañen la lectura en vez de quedar un hueco al costado. */
+@media (min-width: 1001px) {
+	.skills {
+		position: sticky;
+		top: 110px;
+	}
 }
 
 .skill {
