@@ -240,6 +240,107 @@
 		}
 	});
 
+	/* ---------- Proyectos: filtro por especialidad y paginación ----------
+	   Cada tarjeta declara sus categorías en data-cat (pueden ser varias,
+	   separadas por espacios). Sin JS se ven todos los proyectos. */
+
+	var workGrid = document.getElementById("work-grid");
+
+	if (workGrid) {
+		var POR_PAGINA = 6;
+		var cards = Array.prototype.slice.call(workGrid.querySelectorAll("[data-project]"));
+		var filterBtns = Array.prototype.slice.call(document.querySelectorAll(".filter"));
+		var pager = document.getElementById("work-pager");
+		var emptyMsg = document.getElementById("work-empty");
+		var status = document.getElementById("work-status");
+		var activeCat = "todos";
+		var currentPage = 1;
+
+		function matches(card) {
+			if (activeCat === "todos") return true;
+			return (card.getAttribute("data-cat") || "").split(/\s+/).indexOf(activeCat) !== -1;
+		}
+
+		function arrow(dir) {
+			return (
+				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+				'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' +
+				(dir < 0 ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7") +
+				'"/></svg>'
+			);
+		}
+
+		function addPageBtn(label, page, opts) {
+			var b = document.createElement("button");
+			b.type = "button";
+			b.innerHTML = label;
+			if (opts && opts.aria) b.setAttribute("aria-label", opts.aria);
+			if (opts && opts.disabled) b.disabled = true;
+			if (opts && opts.current) b.setAttribute("aria-current", "page");
+			b.addEventListener("click", function () {
+				currentPage = page;
+				render(true);
+			});
+			pager.appendChild(b);
+		}
+
+		function render(scroll) {
+			var visibles = cards.filter(matches);
+			var totalPaginas = Math.max(1, Math.ceil(visibles.length / POR_PAGINA));
+			if (currentPage > totalPaginas) currentPage = totalPaginas;
+
+			var desde = (currentPage - 1) * POR_PAGINA;
+			var enPagina = visibles.slice(desde, desde + POR_PAGINA);
+
+			cards.forEach(function (card) {
+				card.hidden = enPagina.indexOf(card) === -1;
+			});
+
+			emptyMsg.hidden = visibles.length > 0;
+
+			pager.innerHTML = "";
+			if (totalPaginas > 1) {
+				addPageBtn(arrow(-1), currentPage - 1, {
+					aria: "Página anterior",
+					disabled: currentPage === 1
+				});
+				for (var i = 1; i <= totalPaginas; i++) {
+					addPageBtn(String(i), i, {
+						aria: "Página " + i,
+						current: i === currentPage
+					});
+				}
+				addPageBtn(arrow(1), currentPage + 1, {
+					aria: "Página siguiente",
+					disabled: currentPage === totalPaginas
+				});
+			}
+
+			status.textContent =
+				visibles.length === 0
+					? "No hay proyectos en esta categoría."
+					: "Mostrando " + enPagina.length + " de " + visibles.length + " proyectos.";
+
+			if (scroll) {
+				var head = document.querySelector("#proyectos .filters");
+				if (head) window.scrollTo({ top: head.getBoundingClientRect().top + window.scrollY - 120 });
+			}
+		}
+
+		filterBtns.forEach(function (btn) {
+			btn.addEventListener("click", function () {
+				activeCat = btn.getAttribute("data-filter");
+				currentPage = 1;
+				filterBtns.forEach(function (b) {
+					b.setAttribute("aria-pressed", String(b === btn));
+				});
+				render(false);
+			});
+		});
+
+		render(false);
+	}
+
 	/* ---------- Metodología: pestañas del proceso ----------
 	   Los arcos del círculo hacen lo mismo que las pestañas: son un atajo
 	   visual, no un control aparte. */
