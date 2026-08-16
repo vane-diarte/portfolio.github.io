@@ -163,13 +163,7 @@
 		cloneInto(Array.prototype.slice.call(track.children));
 	}
 
-	var loopTracks = [document.getElementById("marquee-track")].concat(
-		Array.prototype.slice.call(document.querySelectorAll("[data-loop]"))
-	);
-
-	loopTracks.forEach(function (track) {
-		if (track) buildLoop(track);
-	});
+	Array.prototype.forEach.call(document.querySelectorAll("[data-loop]"), buildLoop);
 
 	/* ---------- Rotador de roles ---------- */
 
