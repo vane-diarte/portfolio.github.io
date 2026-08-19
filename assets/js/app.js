@@ -291,6 +291,57 @@
 		});
 
 		selectPhase(0, false);
+
+		/* El punto que gira es coral, igual que el arco de la fase activa: al
+		   pasarle por encima se perdería. Leemos su ángulo del transform que
+		   va aplicando la animación y, cuando cae dentro del tramo activo, le
+		   ponemos .is-over para que pase a un coral mucho más oscuro.
+
+		   El anillo tiene cuatro tramos de 90°, separados por un hueco de 10°,
+		   y el punto arranca arriba: el tramo i ocupa de 90i+5 a 90i+85. */
+		var orbit = document.querySelector(".method-orbit");
+
+		if (orbit && !reduceMotion) {
+			// El hueco entre tramos es de 10°, pero el punto tiene radio: empieza
+			// a pisar el arco unos 3° antes de su comienzo teórico. Con 2° el
+			// cambio de color coincide con lo que se ve.
+			var HUECO = 2;
+			var timer = null;
+
+			function anguloDelPunto() {
+				var m = getComputedStyle(orbit).transform;
+				if (!m || m === "none") return 0;
+				var v = m.match(/-?[\d.e+-]+/g);
+				if (!v || v.length < 4) return 0;
+				// matrix(a, b, c, d, ...) donde a = cos y b = sin del giro
+				var deg = (Math.atan2(parseFloat(v[1]), parseFloat(v[0])) * 180) / Math.PI;
+				return (deg + 360) % 360;
+			}
+
+			function revisar() {
+				var activo = document.querySelector(".method-ring.is-active");
+				if (!activo) return;
+				var i = parseInt(activo.getAttribute("data-ring"), 10) - 1;
+				var a = anguloDelPunto();
+				orbit.classList.toggle("is-over", a >= i * 90 + HUECO && a <= i * 90 + 90 - HUECO);
+			}
+
+			// El punto tarda 16s en dar la vuelta, así que revisar diez veces
+			// por segundo alcanza y sobra; y solo mientras la sección se ve.
+			var visor = new IntersectionObserver(function (entries) {
+				entries.forEach(function (e) {
+					if (e.isIntersecting && !timer) {
+						timer = window.setInterval(revisar, 100);
+					} else if (!e.isIntersecting && timer) {
+						window.clearInterval(timer);
+						timer = null;
+						orbit.classList.remove("is-over");
+					}
+				});
+			});
+
+			visor.observe(document.getElementById("metodologia") || orbit);
+		}
 	}
 
 	/* ---------- Copiar correo ---------- */

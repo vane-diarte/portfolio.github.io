@@ -26,6 +26,9 @@
 	--accent: #c83d1d;
 	--accent-2: #1c7f96;
 	--accent-soft: rgba(200, 61, 29, 0.12);
+	/* Coral muy oscuro: solo lo usa el punto del diagrama cuando pasa por
+	   encima del arco coral, para no perderse contra él. */
+	--accent-deep: #330d04;
 	/* Color del texto que va encima del acento */
 	--on-accent: #ffffff;
 
@@ -73,6 +76,7 @@
 	--accent: #ff7a58;
 	--accent-2: #4bc4dd;
 	--accent-soft: rgba(255, 122, 88, 0.14);
+	--accent-deep: #7a240a;
 	/* Acá el acento es claro, así que encima va texto oscuro */
 	--on-accent: #14161a;
 
@@ -1788,13 +1792,16 @@ p {
 	animation: method-spin 16s linear infinite;
 }
 
-/* El punto lleva su propio hueco: al cruzar el arco coral seguía siendo
-   coral sobre coral y se perdía. Ahora el anillo del color del fondo lo
-   recorta contra cualquier tramo, activo o no. */
+/* El punto es coral liso. Cuando su recorrido lo lleva por encima del arco
+   de la fase activa —que también es coral— el JS le pone .is-over y pasa a
+   un coral mucho más oscuro para seguir distinguiéndose. */
 .method-orbit circle {
-	fill: var(--text);
-	stroke: var(--bg);
-	stroke-width: 4;
+	fill: var(--accent);
+	transition: fill 0.3s var(--ease);
+}
+
+.method-orbit.is-over circle {
+	fill: var(--accent-deep);
 }
 
 @keyframes method-spin {
