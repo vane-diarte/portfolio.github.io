@@ -1752,23 +1752,32 @@ p {
 	font-family: var(--font-sans);
 	font-size: 15px;
 	font-weight: 600;
-	fill: var(--bg);
+	fill: var(--text-mute);
 	pointer-events: none;
 	transition: fill 0.45s var(--ease);
 }
 
+/* Relleno opaco del color del fondo: antes era translúcido y el arco se
+   transparentaba, dejando ver el borde redondeado por debajo. El halo
+   además despega la burbuja del arco, que si no se fundía con el coral. */
 .method-num-bg {
-	fill: var(--line-strong);
-	transition: fill 0.45s var(--ease);
+	fill: var(--bg);
+	stroke: var(--line-strong);
+	stroke-width: 2.5;
+	transition: fill 0.45s var(--ease), stroke 0.45s var(--ease);
 	pointer-events: none;
+	paint-order: stroke;
 }
 
+/* La fase activa se invierte: burbuja del color del fondo y número coral.
+   Así se distingue del arco sin competir con él. */
 .method-node.is-active .method-num-bg {
-	fill: var(--accent);
+	stroke: var(--accent);
 }
 
 .method-node.is-active .method-num {
-	fill: var(--on-accent);
+	fill: var(--accent);
+	font-weight: 700;
 }
 
 /* Punto que recorre el ciclo: la señal visual de la iteración */
@@ -1779,8 +1788,13 @@ p {
 	animation: method-spin 16s linear infinite;
 }
 
+/* El punto lleva su propio hueco: al cruzar el arco coral seguía siendo
+   coral sobre coral y se perdía. Ahora el anillo del color del fondo lo
+   recorta contra cualquier tramo, activo o no. */
 .method-orbit circle {
-	fill: var(--accent);
+	fill: var(--text);
+	stroke: var(--bg);
+	stroke-width: 4;
 }
 
 @keyframes method-spin {
