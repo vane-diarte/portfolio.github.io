@@ -26,9 +26,9 @@
 	--accent: #c83d1d;
 	--accent-2: #1c7f96;
 	--accent-soft: rgba(200, 61, 29, 0.12);
-	/* Coral muy oscuro: solo lo usa el punto del diagrama cuando pasa por
-	   encima del arco coral, para no perderse contra él. */
-	--accent-deep: #330d04;
+	/* Coral apenas más claro: lo usa el punto del diagrama al pasar por
+	   encima del arco coral. Alcanza para notarlo sin llamar la atención. */
+	--accent-over: #e56b4a;
 	/* Color del texto que va encima del acento */
 	--on-accent: #ffffff;
 
@@ -76,7 +76,7 @@
 	--accent: #ff7a58;
 	--accent-2: #4bc4dd;
 	--accent-soft: rgba(255, 122, 88, 0.14);
-	--accent-deep: #7a240a;
+	--accent-over: #ffb8a2;
 	/* Acá el acento es claro, así que encima va texto oscuro */
 	--on-accent: #14161a;
 
@@ -1793,15 +1793,15 @@ p {
 }
 
 /* El punto es coral liso. Cuando su recorrido lo lleva por encima del arco
-   de la fase activa —que también es coral— el JS le pone .is-over y pasa a
-   un coral mucho más oscuro para seguir distinguiéndose. */
+   de la fase activa —que también es coral— el JS le pone .is-over y aclara
+   apenas el tono: lo justo para seguirlo sin que se vuelva un estorbo. */
 .method-orbit circle {
 	fill: var(--accent);
 	transition: fill 0.3s var(--ease);
 }
 
 .method-orbit.is-over circle {
-	fill: var(--accent-deep);
+	fill: var(--accent-over);
 }
 
 @keyframes method-spin {
