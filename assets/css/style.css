@@ -1556,47 +1556,77 @@ p {
    de la izquierda es una lista sin caja, acá el recuadro marca la diferencia
    entre las dos mitades de la sección. */
 .skills-panel {
-	padding: 28px 30px 30px;
+	padding: clamp(26px, 3vw, 34px);
 	border: 1px solid var(--line);
 	border-radius: var(--r-lg);
 	background: var(--bg-elev);
 	box-shadow: var(--shadow-sm);
 }
 
-.skills-panel h3 {
-	padding-bottom: 18px;
+.skills-panel__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	/* El título respira arriba y abajo: antes la lista le quedaba encima. */
+	padding-bottom: 20px;
+	margin-bottom: 22px;
 	border-bottom: 1px solid var(--line);
-	font-size: 1.18rem;
+}
+
+.skills-panel__head h3 {
+	font-size: 1.25rem;
+}
+
+.skills-panel__count {
+	font-size: 12.5px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-mute);
 }
 
 .skills {
 	display: grid;
 }
 
-/* Dentro del panel las filas ya no necesitan borde propio: alcanza con una
-   línea fina de separación, y así no quedan tarjetas dentro de una tarjeta. */
+/* Dentro del panel las filas ya no llevan borde propio: alcanza una línea
+   fina de separación, y así no quedan tarjetas dentro de una tarjeta. */
 .skill {
 	display: flex;
-	align-items: center;
-	gap: 14px;
-	padding: 15px 2px;
+	align-items: baseline;
+	gap: 16px;
+	padding: 16px 2px;
 	border: 0;
-	border-bottom: 1px solid var(--line);
+	border-top: 1px solid var(--line);
 	border-radius: 0;
 	background: none;
-	font-size: 15.5px;
+	font-size: 15.8px;
 	font-weight: 450;
 	transition: transform 0.35s var(--ease), color 0.35s var(--ease);
 }
 
+/* La primera no necesita línea: ya la separa la del encabezado. */
+.skill:first-child {
+	border-top: 0;
+	padding-top: 0;
+}
+
 .skill:last-child {
-	border-bottom: 0;
 	padding-bottom: 0;
 }
 
 .skill:hover {
 	transform: translateX(5px);
 	color: var(--accent);
+}
+
+.skill__num {
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--accent);
+	letter-spacing: 0.04em;
+	font-variant-numeric: tabular-nums;
+	flex: none;
 }
 
 /* La columna de texto es bastante más larga: dejamos el panel fijo para que
@@ -1606,14 +1636,6 @@ p {
 		position: sticky;
 		top: 110px;
 	}
-}
-
-.skill__num {
-	font-size: 12px;
-	font-weight: 500;
-	color: var(--accent);
-	letter-spacing: 0.04em;
-	flex: none;
 }
 
 /* Timeline */
