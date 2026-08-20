@@ -610,48 +610,37 @@ p {
 	70%, 100% { transform: scale(2.6); opacity: 0; }
 }
 
-.hero h1 {
+/* El saludo. Sin tamaño propio caía al que trae el navegador por defecto
+   (~25px) y quedaba diminuto al lado del titular. Ahora mide algo menos de
+   la mitad: se lee como entrada, no como subtítulo perdido. */
+.hero__greeting {
 	margin-top: 26px;
+	font-size: clamp(1.35rem, 3.1vw, 2.1rem);
+	font-weight: 450;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	color: var(--text-soft);
+}
+
+.hero h1 {
+	/* Pegado al saludo: los dos son una misma frase partida en dos. */
+	margin-top: 6px;
 	font-size: clamp(2.7rem, 7.2vw, 5rem);
-	letter-spacing: -0.045em;
-	line-height: 0.98;
+	letter-spacing: -0.03em;
+	line-height: 1;
 }
 
 .hero h1 .line {
 	display: block;
 }
 
+/* Antes envolvía el rotador de roles; ahora es una línea suelta. */
 .hero__roles {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	gap: 4px 10px;
-	margin-top: 22px;
-	font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+	margin-top: 20px;
+	font-size: clamp(1.02rem, 1.9vw, 1.22rem);
 	font-weight: 450;
-	letter-spacing: -0.03em;
+	letter-spacing: -0.02em;
 	color: var(--text-soft);
-}
-
-.roles__viewport {
-	position: relative;
-	height: 1.4em;
-	overflow: hidden;
-}
-
-.roles__list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	transition: transform 0.7s var(--ease);
-}
-
-.roles__list li {
-	height: 1.4em;
-	line-height: 1.4em;
-	white-space: nowrap;
-	color: var(--text);
-	font-weight: 500;
 }
 
 .hero__lead {

@@ -165,30 +165,6 @@
 
 	Array.prototype.forEach.call(document.querySelectorAll("[data-loop]"), buildLoop);
 
-	/* ---------- Rotador de roles ---------- */
-
-	var roles = document.getElementById("roles");
-
-	if (roles && !reduceMotion) {
-		var items = roles.children.length;
-		var index = 0;
-
-		setInterval(function () {
-			index += 1;
-			roles.style.transition = "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
-			roles.style.transform = "translateY(" + -index * 1.4 + "em)";
-
-			// El último elemento repite al primero: al llegar, volvemos sin animación.
-			if (index === items - 1) {
-				window.setTimeout(function () {
-					roles.style.transition = "none";
-					roles.style.transform = "translateY(0)";
-					index = 0;
-				}, 720);
-			}
-		}, 2600);
-	}
-
 	/* ---------- Lightbox de imágenes ---------- */
 
 	var lightbox = document.getElementById("lightbox");
