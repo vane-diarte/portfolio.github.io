@@ -1159,31 +1159,6 @@ p {
 	aspect-ratio: 4 / 3;
 }
 
-.nda-badge {
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 6px 12px;
-	border-radius: var(--r-pill);
-	background: rgba(12, 13, 15, 0.72);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	color: #fff;
-	font-size: 12.5px;
-	font-weight: 500;
-	letter-spacing: 0.02em;
-	pointer-events: none;
-}
-
-.nda-badge svg {
-	width: 12px;
-	height: 12px;
-}
-
 /* Tarjetas de categoría: llevan a las páginas internas de cada especialidad */
 
 .cat-grid {
