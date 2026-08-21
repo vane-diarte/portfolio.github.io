@@ -165,6 +165,75 @@
 
 	Array.prototype.forEach.call(document.querySelectorAll("[data-loop]"), buildLoop);
 
+	/* ---------- Imágenes de casos que todavía no se subieron ----------
+	   Las figuras se escriben siempre con su <img> real apuntando al nombre
+	   definitivo. Si ese archivo todavía no está en el repo, esto reemplaza
+	   la figura por el hueco punteado con el nombre exacto que hay que usar.
+	   Así subir una imagen es copiarla a images/work/ y nada más: no hay que
+	   tocar el HTML. */
+
+	function huecoDeImagen(etiqueta, archivo) {
+		var hueco = document.createElement("div");
+		hueco.className = "case-slot";
+
+		var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+		svg.setAttribute("viewBox", "0 0 24 24");
+		svg.setAttribute("fill", "none");
+		svg.setAttribute("stroke", "currentColor");
+		svg.setAttribute("stroke-width", "1.6");
+		svg.setAttribute("stroke-linecap", "round");
+		svg.setAttribute("stroke-linejoin", "round");
+		svg.setAttribute("aria-hidden", "true");
+		svg.innerHTML =
+			'<rect x="3" y="4" width="18" height="16" rx="2.5"/>' +
+			'<circle cx="8.5" cy="10" r="1.8"/>' +
+			'<path d="m4 18 5-5 4 4 3-2.5 4 3.5"/>';
+		hueco.appendChild(svg);
+
+		var texto = document.createElement("span");
+		texto.appendChild(document.createTextNode("Falta "));
+		if (etiqueta) {
+			var negrita = document.createElement("b");
+			negrita.textContent = etiqueta;
+			texto.appendChild(negrita);
+		} else {
+			texto.appendChild(document.createTextNode("esta imagen"));
+		}
+		texto.appendChild(document.createElement("br"));
+
+		var ruta = document.createElement("code");
+		ruta.textContent = archivo;
+		texto.appendChild(ruta);
+
+		hueco.appendChild(texto);
+		return hueco;
+	}
+
+	function marcarImagenFaltante(img) {
+		var marco = img.closest(".case-figure__frame");
+		if (!marco || marco.dataset.faltante === "1") return;
+		marco.dataset.faltante = "1";
+
+		// Reemplazar el <button> entero descarta también su listener de lightbox.
+		var ruta = (marco.getAttribute("data-full") || img.getAttribute("src") || "")
+			.replace(/^\.\.\//, "");
+		marco.parentNode.replaceChild(
+			huecoDeImagen(marco.getAttribute("data-slot"), ruta),
+			marco
+		);
+	}
+
+	Array.prototype.forEach.call(
+		document.querySelectorAll(".case-figure__frame img"),
+		function (img) {
+			img.addEventListener("error", function () {
+				marcarImagenFaltante(img);
+			});
+			// Puede haber fallado antes de que corriera este script.
+			if (img.complete && img.naturalWidth === 0) marcarImagenFaltante(img);
+		}
+	);
+
 	/* ---------- Lightbox de imágenes ---------- */
 
 	var lightbox = document.getElementById("lightbox");
