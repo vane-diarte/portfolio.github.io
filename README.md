@@ -64,17 +64,30 @@ Las que faltan hoy en `proyectos/backoffice-banca.html`:
 
 | Archivo | Qué imagen va |
 | --- | --- |
-| `backoffice-personas.png` | Las user personas de los siete roles |
-| `backoffice-roles.png` | El mapa de roles y permisos (o el journey map) |
-| `backoffice-wf-empresas.png` | Wireframe del listado de empresas (banca empresa) |
+| `backoffice-personas.png` | Las user personas de los siete perfiles |
+| `backoffice-roles.png` | La matriz de roles y permisos (o el journey map) |
+| `backoffice-wf-listado.png` | Wireframe del patrón de listado (también se usa en la portada) |
+| `backoffice-wf-detalle.png` | Wireframe del patrón de detalle (también se usa en la portada) |
+| `backoffice-wf-ficha.png` | Wireframe de la ficha con información asociada (también en la portada) |
+| `backoffice-wf-busqueda.png` | Wireframe del listado con búsqueda, filtros y paginación |
 | `backoffice-wf-seleccion.png` | Wireframe de la tabla con selección múltiple y acciones en lote |
-| `backoffice-wf-confirmacion.png` | Wireframe del diálogo de confirmación sobre el listado |
-| `backoffice-wf-dispositivo.png` | Wireframe de la ficha de dispositivo seguro |
-| `backoffice-wf-informes.png` | Wireframe del tablero de informes con los indicadores |
+| `backoffice-wf-confirmacion.png` | Wireframe del diálogo de confirmación |
+| `backoffice-wf-panel.png` | Wireframe del detalle con panel lateral fijo |
+| `backoffice-wf-tablero.png` | Wireframe del tablero de indicadores |
 | `backoffice-design-system.png` | Los componentes del design system |
 | `backoffice-prototipo.png` | Vista general del prototipo V2 |
 
 Exportar desde Figma en PNG a 2x, con un ancho de entre 1600 y 2000 px.
+
+> **Antes de exportar:** el proyecto está bajo acuerdo de confidencialidad y el
+> caso está escrito en términos genéricos a propósito. Conviene revisar que en
+> las capturas no queden nombres de módulos del cliente, datos de personas ni
+> marcas, y reemplazarlos por datos de ejemplo en Figma antes de exportar.
+>
+> Las tres capturas que estaban publicadas (`Solicitudes-Banca-Persona*.png`) se
+> quitaron del sitio por ese motivo: mostraban el nombre de la plataforma, los
+> módulos y el nombre completo de una persona. Siguen estando en el historial de
+> git, que es público.
 
 ## Accesibilidad y rendimiento
 

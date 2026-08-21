@@ -172,9 +172,9 @@
 	   Así subir una imagen es copiarla a images/work/ y nada más: no hay que
 	   tocar el HTML. */
 
-	function huecoDeImagen(etiqueta, archivo) {
+	function huecoDeImagen(etiqueta, archivo, clase, conNombre) {
 		var hueco = document.createElement("div");
-		hueco.className = "case-slot";
+		hueco.className = clase;
 
 		var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		svg.setAttribute("viewBox", "0 0 24 24");
@@ -189,6 +189,7 @@
 			'<circle cx="8.5" cy="10" r="1.8"/>' +
 			'<path d="m4 18 5-5 4 4 3-2.5 4 3.5"/>';
 		hueco.appendChild(svg);
+		if (!conNombre) return hueco;
 
 		var texto = document.createElement("span");
 		texto.appendChild(document.createTextNode("Falta "));
@@ -210,21 +211,29 @@
 	}
 
 	function marcarImagenFaltante(img) {
-		var marco = img.closest(".case-figure__frame");
+		var marco = img.closest(".case-figure__frame, .shot");
 		if (!marco || marco.dataset.faltante === "1") return;
 		marco.dataset.faltante = "1";
+
+		// En la portada el hueco conserva las clases del marco para no romper la
+		// grilla, y va sin texto: el nombre del archivo es una nota de trabajo
+		// que solo tiene sentido dentro del caso de estudio.
+		var enPortada = marco.classList.contains("shot");
+		var clase = enPortada
+			? marco.className.replace(/\s*shot--nda\b/, "") + " shot--vacio"
+			: "case-slot";
 
 		// Reemplazar el <button> entero descarta también su listener de lightbox.
 		var ruta = (marco.getAttribute("data-full") || img.getAttribute("src") || "")
 			.replace(/^\.\.\//, "");
 		marco.parentNode.replaceChild(
-			huecoDeImagen(marco.getAttribute("data-slot"), ruta),
+			huecoDeImagen(marco.getAttribute("data-slot"), ruta, clase, !enPortada),
 			marco
 		);
 	}
 
 	Array.prototype.forEach.call(
-		document.querySelectorAll(".case-figure__frame img"),
+		document.querySelectorAll(".case-figure__frame img, .shot img"),
 		function (img) {
 			img.addEventListener("error", function () {
 				marcarImagenFaltante(img);

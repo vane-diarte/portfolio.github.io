@@ -985,6 +985,40 @@ p {
 	aspect-ratio: 16 / 9;
 }
 
+/* Miniatura cuyo archivo todavía no está en el repo. */
+
+.shot--vacio {
+	display: grid;
+	place-content: center;
+	justify-items: center;
+	gap: 8px;
+	padding: 18px;
+	border-style: dashed;
+	border-width: 1.5px;
+	border-color: var(--line-strong);
+	cursor: default;
+	text-align: center;
+}
+
+.shot--vacio svg {
+	width: 22px;
+	height: 22px;
+	color: var(--text-mute);
+}
+
+.shot--vacio span {
+	font-size: 12px;
+	line-height: 1.5;
+	color: var(--text-mute);
+}
+
+.shot--vacio code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 11.5px;
+	color: var(--text-mute);
+	word-break: break-all;
+}
+
 .shot__zoom {
 	position: absolute;
 	top: 10px;
@@ -2195,6 +2229,31 @@ p {
 	max-width: 58ch;
 	color: var(--text-soft);
 	font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+}
+
+/* Aviso de confidencialidad: informa sin robarle protagonismo al resumen,
+   por eso va en gris y no en el coral de los recuadros de pendiente. */
+
+.case-hero__note {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	margin-top: 22px;
+	padding: 14px 18px;
+	max-width: 62ch;
+	border: 1px solid var(--line);
+	border-radius: var(--r-md);
+	background: var(--bg-sunken);
+	color: var(--text-mute);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.case-hero__note svg {
+	flex: none;
+	width: 17px;
+	height: 17px;
+	margin-top: 3px;
 }
 
 /* Ficha técnica */

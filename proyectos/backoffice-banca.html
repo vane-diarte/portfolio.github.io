@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Backoffice de banca — Sistema interno | Vanessa Diarte</title>
+	<title>Sistema interno para una entidad financiera | Vanessa Diarte</title>
 
-	<meta name="description" content="Caso de estudio: investigación con user personas, mapa de roles y permisos, wireframes, design system y prototipo para el backoffice de una entidad financiera." />
+	<meta name="description" content="Caso de estudio: el proceso de diseño UX/UI de un sistema interno — investigación, arquitectura de permisos, patrones, design system y prototipo navegable." />
 	<meta name="author" content="Vanessa Diarte" />
 	<meta name="theme-color" content="#0a0b0d" />
 	<link rel="canonical" href="https://vane-diarte.github.io/portfolio.github.io/proyectos/backoffice-banca.html" />
 
 	<meta property="og:type" content="article" />
 	<meta property="og:locale" content="es_PY" />
-	<meta property="og:title" content="Backoffice de banca — Sistema interno" />
-	<meta property="og:description" content="De la investigación al prototipo: un año diseñando el sistema interno de una entidad financiera." />
-	<meta property="og:image" content="https://vane-diarte.github.io/portfolio.github.io/images/work/Solicitudes-Banca-Persona.png" />
+	<meta property="og:title" content="Sistema interno para una entidad financiera" />
+	<meta property="og:description" content="Un año de proceso: de la investigación con siete perfiles de usuario al design system y el prototipo navegable." />
+	<meta property="og:image" content="https://vane-diarte.github.io/portfolio.github.io/images/work/vane-1.png" />
 	<meta property="og:url" content="https://vane-diarte.github.io/portfolio.github.io/proyectos/backoffice-banca.html" />
 	<meta name="twitter:card" content="summary_large_image" />
 
@@ -108,19 +108,31 @@
 					<span class="tag">Prototipo</span>
 				</div>
 
-				<h1>Backoffice de banca: del <span class="highlight">relevamiento</span> al sistema de diseño</h1>
+				<h1>Sistema interno: del <span class="highlight">relevamiento</span> al sistema de diseño</h1>
 
 				<p class="case-hero__lead">
-					<!-- ESCRIBÍ ACÁ: si querés, reemplazá este resumen por el tuyo. -->
-					Un año de trabajo continuo sobre el sistema interno de una entidad financiera:
-					entender cómo trabajaban siete perfiles distintos, rediseñar la arquitectura
-					de permisos, documentar cada componente y llevarlo hasta un prototipo navegable.
+					Más de un año rediseñando la plataforma interna de una entidad financiera:
+					entender cómo trabajaban siete perfiles distintos, reordenar la arquitectura
+					de permisos, documentar cada componente y llevarlo hasta un prototipo
+					navegable.
+				</p>
+
+				<p class="case-hero__note">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
+					Proyecto bajo acuerdo de confidencialidad. Este caso cuenta el proceso y las
+					decisiones de diseño; no describe la operación del cliente ni sus
+					funcionalidades, y las piezas que se muestran son bocetos de trabajo con
+					datos de ejemplo.
 				</p>
 
 				<dl class="case-meta">
 					<div>
 						<dt>Mi rol</dt>
 						<dd>Diseño UX/UI — proyecto liderado de inicio a fin</dd>
+					</div>
+					<div>
+						<dt>Sector</dt>
+						<dd>Entidad financiera</dd>
 					</div>
 					<div>
 						<dt>Alcance</dt>
@@ -135,17 +147,6 @@
 						<dd>Figma</dd>
 					</div>
 				</dl>
-
-				<div class="case-todo">
-					<b>Antes de publicar — decidí esto</b>
-					<p>
-						En tu web actual describís al cliente como «una entidad financiera» sin
-						nombrarlo, y acá mantuve ese criterio. Si tu contrato te permite
-						mencionarlo, ganás mucha credibilidad nombrándolo. Consultalo antes de
-						cambiarlo: es más fácil agregar el nombre después que sacarlo una vez
-						publicado.
-					</p>
-				</div>
 			</div>
 		</section>
 
@@ -155,30 +156,28 @@
 				<div class="case-block__head">
 					<span class="case-block__num">01 — Contexto</span>
 					<div>
-						<h2>Un sistema que usan siete perfiles distintos</h2>
+						<h2>Una sola plataforma, siete perfiles distintos</h2>
 
 						<div class="case-prose">
 							<p>
-								El backoffice es la herramienta con la que el personal del banco
-								administra a los clientes: aprueba solicitudes de alta, activa o
-								bloquea usuarios, gestiona dispositivos seguros y genera reportes.
-								No lo usa una persona: lo usan <strong>siete roles</strong> con
-								permisos y responsabilidades muy distintas.
+								Es un sistema de escritorio que el personal usa todos los días para
+								administrar información y ejecutar operaciones internas. No lo usa
+								una persona: lo usan <strong>siete perfiles</strong> con permisos,
+								responsabilidades y rutinas muy distintas entre sí.
 							</p>
 							<p>
-								Esa es la dificultad central del proyecto. Un registrador, un
-								bloqueador y un operador de reportes entran al mismo sistema pero
-								necesitan ver cosas diferentes, y un permiso mal asignado en un
-								contexto bancario no es una molestia: es un riesgo.
+								Ahí está la dificultad central del proyecto. Los siete entran por la
+								misma puerta pero necesitan ver cosas diferentes, y en un entorno
+								regulado un permiso mal asignado no es una molestia de usabilidad:
+								es un riesgo operativo. Todo lo que se diseñó después tuvo que
+								responder a esa restricción.
 							</p>
-						</div>
-
-						<div class="case-todo">
-							<b>Para completar</b>
 							<p>
-								¿Qué estaba fallando antes del rediseño? ¿Había un sistema viejo,
-								procesos en planilla, pantallas heredadas? Contá el punto de
-								partida concreto y por qué se decidió encarar el proyecto.
+								A eso se sumaba lo que le pasa a cualquier sistema que creció por
+								capas durante años: módulos agregados en momentos distintos, con
+								criterios distintos, y ninguna definición común de cómo debía
+								comportarse una pantalla. Antes de rediseñar nada había que
+								entender qué existía y por qué.
 							</p>
 						</div>
 					</div>
@@ -192,47 +191,65 @@
 				<div class="case-block__head">
 					<span class="case-block__num">02 — Investigación</span>
 					<div>
-						<h2>Relevamiento: entender antes de dibujar</h2>
+						<h2>Entender antes de dibujar</h2>
 
 						<div class="case-prose">
 							<p>
-								La primera etapa no produjo ni una pantalla. Se fue en entender el
-								sistema tal como era y cómo lo usaba cada perfil. De ahí salieron
-								cuatro entregables:
+								La primera etapa no produjo ni una pantalla. Se fue entera en
+								entender el sistema tal como era y cómo lo usaba cada perfil:
+								sesiones con referentes de cada área, observación de la operación
+								real y una revisión de la plataforma existente pantalla por
+								pantalla. De ahí salieron cuatro entregables:
 							</p>
 							<ul>
 								<li>
-									<strong>Siete user personas</strong>, una por rol: registrador,
-									administrador de usuarios, bloqueador, operador, limitador,
-									gestor de dispositivos y reportes de banca empresa. Cada una con
-									sus objetivos, frustraciones y comportamientos reales
+									<strong>Siete user personas</strong>, una por perfil, con sus
+									objetivos, sus frustraciones y su rutina real de trabajo —no la
+									que decía el manual
 								</li>
-								<li><strong>Mapa de sitio</strong> del sistema existente</li>
-								<li><strong>Mapa de roles y permisos</strong>: quién puede hacer qué</li>
-								<li><strong>Journey map</strong> y un listado de oportunidades de mejora</li>
+								<li>
+									<strong>Mapa de sitio</strong> de la plataforma existente, que
+									sirvió para ver la duplicación y los caminos muertos
+								</li>
+								<li>
+									<strong>Matriz de roles y permisos</strong>: una grilla de perfil
+									por acción, con tres estados posibles —permitido, denegado y
+									condicionado— que se convirtió en la fuente de verdad del
+									proyecto
+								</li>
+								<li>
+									<strong>Journey map</strong> y un backlog de oportunidades de
+									mejora, priorizado por impacto y esfuerzo junto con el equipo
+								</li>
 							</ul>
 							<p>
-								Las frustraciones que aparecieron marcaron el rumbo de todo lo que
+								Las frustraciones que se repetían marcaron el rumbo de todo lo que
 								vino después: <em>«si me equivoco en los permisos, puedo habilitar
-								funciones que no corresponden»</em>, <em>«necesito que el sistema me
-								diga si algo está mal antes de enviarlo»</em>, <em>«quiero que me
-								muestre la información sin tener que hacer demasiados clics»</em>.
+								cosas que no corresponden»</em>, <em>«necesito que el sistema me
+								avise si algo está mal antes de enviarlo»</em>, <em>«quiero ver la
+								información sin tener que hacer tantos clics»</em>.
+							</p>
+							<p>
+								Esos tres reclamos se tradujeron en tres criterios de diseño
+								—<strong>permisos explícitos, validación temprana y menos pasos por
+								tarea</strong>— que después sirvieron para decidir cada vez que
+								hubo dudas.
 							</p>
 						</div>
 
 						<div class="case-figures case-figures--2">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-personas.png" data-caption="User personas por rol" data-slot="la imagen de las user personas">
-									<img src="../images/work/backoffice-personas.png" alt="User personas de los siete roles del backoffice" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-personas.png" data-caption="User personas por perfil" data-slot="la imagen de las user personas">
+									<img src="../images/work/backoffice-personas.png" alt="User personas de los siete perfiles del sistema" loading="lazy" />
 								</button>
 								<figcaption><b>User personas.</b> Un perfil por rol, con objetivos y frustraciones.</figcaption>
 							</figure>
 
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-roles.png" data-caption="Mapa de roles y permisos" data-slot="el mapa de roles y permisos">
-									<img src="../images/work/backoffice-roles.png" alt="Mapa de roles y permisos del backoffice" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-roles.png" data-caption="Matriz de roles y permisos" data-slot="la matriz de roles y permisos">
+									<img src="../images/work/backoffice-roles.png" alt="Matriz de roles y permisos del sistema" loading="lazy" />
 								</button>
-								<figcaption><b>Roles y permisos.</b> Qué puede hacer cada perfil dentro del sistema.</figcaption>
+								<figcaption><b>Roles y permisos.</b> Perfil por acción, con sus tres estados posibles.</figcaption>
 							</figure>
 						</div>
 					</div>
@@ -246,112 +263,117 @@
 				<div class="case-block__head">
 					<span class="case-block__num">03 — Wireframes</span>
 					<div>
-						<h2>Los flujos, módulo por módulo</h2>
+						<h2>Patrones primero, pantallas después</h2>
 
 						<div class="case-prose">
 							<p>
-								Con el relevamiento hecho, dibujé los flujos completos de cada
-								módulo antes de tocar un solo color: <strong>login, administrador de
-								usuarios, administrador de roles, solicitudes de alta, usuarios de
-								banca persona, dispositivo seguro y reportes</strong>, más los
-								módulos equivalentes de banca empresa.
+								Con el relevamiento hecho, dibujé toda la plataforma en baja
+								fidelidad antes de tocar un solo color. Trabajar en gris obliga a
+								discutir lo que importa: qué información necesita ver quien decide,
+								en qué orden, y qué pasa cuando algo sale mal.
 							</p>
 							<p>
-								Trabajar en gris obliga a discutir lo que importa: qué información
-								necesita ver quien decide, en qué orden, y qué pasa cuando algo
-								sale mal. Cada pantalla se conectó con sus estados de error y
-								confirmación, para que el flujo se pudiera recorrer completo y no
-								quedaran caminos sin resolver.
+								La decisión que ordenó esta etapa fue no empezar por las pantallas
+								sino por los <strong>patrones</strong>. En lugar de resolver cada
+								módulo por separado, definí un puñado de estructuras reutilizables
+								—listado, detalle, formulario, confirmación, estado vacío y
+								error— y después cada pantalla se armó eligiendo entre ellas. Eso
+								hizo que módulos hechos con meses de diferencia se comporten igual,
+								y que sumar uno nuevo no sea empezar de cero.
+							</p>
+							<p>
+								Cada flujo se dibujó completo, con sus estados de carga, vacío,
+								error de validación y confirmación conectados entre sí, para que se
+								pudiera recorrer de punta a punta y no quedaran caminos sin
+								resolver. Todo sobre una <strong>grilla de 12 columnas con
+								espaciado base de 8 px</strong>, la misma medida que después se
+								convirtió en los tokens del design system.
 							</p>
 						</div>
 
 						<div class="case-figures">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona-1.png" data-caption="Wireframe — listado de solicitudes">
-									<img src="../images/work/Solicitudes-Banca-Persona-1.png" alt="Wireframe del listado de solicitudes de alta" loading="lazy" width="1920" height="1080" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-listado.png" data-caption="Wireframe — patrón de listado" data-slot="el wireframe del patrón de listado">
+									<img src="../images/work/backoffice-wf-listado.png" alt="Wireframe en baja fidelidad de un listado con filtros y acciones" loading="lazy" width="1920" height="1080" />
 									<span class="nda-badge">
 										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
 										Protegido por NDA
 									</span>
 								</button>
-								<figcaption><b>Listado de solicitudes.</b> Filtros y acciones sobre las altas pendientes.</figcaption>
+								<figcaption><b>Patrón de listado.</b> La estructura base: filtros arriba, acciones al alcance y el estado de cada registro visible sin abrirlo.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-figures case-figures--2">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona.png" data-caption="Wireframe — detalle de registro">
-									<img src="../images/work/Solicitudes-Banca-Persona.png" alt="Wireframe del detalle de un registro de banca persona" loading="lazy" width="1920" height="1080" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-detalle.png" data-caption="Wireframe — patrón de detalle" data-slot="el wireframe del patrón de detalle">
+									<img src="../images/work/backoffice-wf-detalle.png" alt="Wireframe en baja fidelidad de una vista de detalle con historial" loading="lazy" width="1920" height="1080" />
 								</button>
-								<figcaption><b>Detalle del registro.</b> Datos, porcentaje de verificación biométrica e historial de estados.</figcaption>
+								<figcaption><b>Patrón de detalle.</b> Los datos arriba, el historial debajo: qué pasó, cuándo y quién lo hizo.</figcaption>
 							</figure>
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/Solicitudes-Banca-Persona-2.png" data-caption="Wireframe — dispositivos asociados">
-									<img src="../images/work/Solicitudes-Banca-Persona-2.png" alt="Wireframe de la ficha de dispositivos asociados" loading="lazy" width="1920" height="1080" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-ficha.png" data-caption="Wireframe — ficha con información asociada" data-slot="el wireframe de la ficha asociada">
+									<img src="../images/work/backoffice-wf-ficha.png" alt="Wireframe en baja fidelidad de una ficha con información asociada" loading="lazy" width="1920" height="1080" />
 								</button>
-								<figcaption><b>Dispositivos.</b> Ficha del dispositivo asociado a cada cliente.</figcaption>
+								<figcaption><b>Ficha asociada.</b> El mismo patrón aplicado a la información secundaria de un registro.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-prose" style="margin-top:28px">
 							<p>
-								El historial de estados —<strong>activado, condicionado,
-								rechazado</strong>— junto al verificador y el comentario resuelve
+								El historial de estados junto al responsable y el comentario resuelve
 								una necesidad concreta que apareció en el relevamiento: poder
-								reconstruir <em>por qué</em> una solicitud terminó como terminó.
+								reconstruir <em>por qué</em> un registro terminó como terminó. En un
+								entorno auditado, esa trazabilidad no es un lujo de diseño; es parte
+								del requerimiento.
 							</p>
 							<p>
-								El mismo criterio se repitió en el resto de los módulos. Estas
-								pantallas muestran cómo se resolvieron cuatro problemas que
-								aparecían una y otra vez en el relevamiento: <strong>encontrar un
-								registro entre miles, operar sobre varios a la vez, confirmar antes
-								de una acción irreversible y leer el estado del sistema de un
-								vistazo</strong>.
+								El resto de los patrones salió del mismo ejercicio. Estas pantallas
+								muestran cómo se resolvieron cuatro problemas que aparecían una y
+								otra vez: <strong>encontrar un registro entre miles, operar sobre
+								varios a la vez, confirmar antes de una acción irreversible y leer
+								el estado general de un vistazo</strong>.
 							</p>
 						</div>
 
 						<div class="case-figures">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-empresas.png" data-caption="Wireframe — listado de empresas de banca empresa" data-slot="el wireframe del listado de empresas">
-									<img src="../images/work/backoffice-wf-empresas.png" alt="Wireframe del listado de empresas con búsqueda, filtros y paginación" loading="lazy" />
-									<span class="nda-badge">
-										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
-										Protegido por NDA
-									</span>
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-busqueda.png" data-caption="Wireframe — búsqueda, filtros y paginación" data-slot="el wireframe de la búsqueda y la paginación">
+									<img src="../images/work/backoffice-wf-busqueda.png" alt="Wireframe en baja fidelidad de un listado con búsqueda, filtros y paginación configurable" loading="lazy" />
 								</button>
-								<figcaption><b>Banca empresa.</b> Búsqueda, filtros y cantidad de ítems por página: el listado se adapta a cómo trabaja cada perfil, no al revés.</figcaption>
+								<figcaption><b>Buscar entre miles.</b> Búsqueda, filtros combinables y cantidad de ítems por página: el listado se adapta a cómo trabaja cada perfil, no al revés.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-figures case-figures--2">
 							<figure class="case-figure">
 								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-seleccion.png" data-caption="Wireframe — selección múltiple y acciones en lote" data-slot="el wireframe de la selección múltiple">
-									<img src="../images/work/backoffice-wf-seleccion.png" alt="Wireframe de una tabla filtrada con barra de acciones en lote sobre los registros seleccionados" loading="lazy" />
+									<img src="../images/work/backoffice-wf-seleccion.png" alt="Wireframe en baja fidelidad de una tabla con selección múltiple y barra de acciones en lote" loading="lazy" />
 								</button>
 								<figcaption><b>Acciones en lote.</b> Al marcar registros aparece la barra de selección: la misma tarea que antes era de a una por vez.</figcaption>
 							</figure>
 
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-confirmacion.png" data-caption="Wireframe — confirmación de una acción" data-slot="el wireframe del diálogo de confirmación">
-									<img src="../images/work/backoffice-wf-confirmacion.png" alt="Wireframe del diálogo de confirmación sobre el listado, con sus campos y los botones cancelar y confirmar" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-confirmacion.png" data-caption="Wireframe — patrón de confirmación" data-slot="el wireframe del patrón de confirmación">
+									<img src="../images/work/backoffice-wf-confirmacion.png" alt="Wireframe en baja fidelidad de un diálogo de confirmación sobre un listado" loading="lazy" />
 								</button>
-								<figcaption><b>Confirmación.</b> Nada irreversible pasa sin un paso intermedio, y sin perder de vista el listado de atrás.</figcaption>
+								<figcaption><b>Confirmación.</b> Nada irreversible pasa sin un paso intermedio, y sin perder de vista el contexto de atrás.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-figures case-figures--2">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-dispositivo.png" data-caption="Wireframe — ficha de dispositivo seguro" data-slot="el wireframe de la ficha de dispositivo">
-									<img src="../images/work/backoffice-wf-dispositivo.png" alt="Wireframe de la ficha de dispositivo seguro con marca, sistema operativo y fecha de vinculación" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-panel.png" data-caption="Wireframe — detalle con panel lateral" data-slot="el wireframe del detalle con panel lateral">
+									<img src="../images/work/backoffice-wf-panel.png" alt="Wireframe en baja fidelidad de una vista de detalle con panel lateral fijo" loading="lazy" />
 								</button>
-								<figcaption><b>Dispositivo seguro.</b> Identificador, marca, sistema operativo y fecha de vinculación, con el historial al costado.</figcaption>
+								<figcaption><b>Detalle con panel.</b> Los datos que no cambian quedan fijos a la izquierda mientras se recorre el historial.</figcaption>
 							</figure>
 
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-informes.png" data-caption="Wireframe — informes e indicadores" data-slot="el wireframe del tablero de informes">
-									<img src="../images/work/backoffice-wf-informes.png" alt="Wireframe del tablero de informes con indicadores, gráfico de barras y gráfico de anillo" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-tablero.png" data-caption="Wireframe — tablero de indicadores" data-slot="el wireframe del tablero de indicadores">
+									<img src="../images/work/backoffice-wf-tablero.png" alt="Wireframe en baja fidelidad de un tablero con indicadores y gráficos" loading="lazy" />
 								</button>
-								<figcaption><b>Informes.</b> Los indicadores del período arriba y el detalle debajo, para responder sin exportar nada.</figcaption>
+								<figcaption><b>Estado de un vistazo.</b> Los indicadores del período arriba y el detalle debajo, para responder sin exportar nada.</figcaption>
 							</figure>
 						</div>
 					</div>
@@ -369,27 +391,45 @@
 
 						<div class="case-prose">
 							<p>
-								Con tantos módulos y varias personas construyendo, la consistencia
+								Con tantas pantallas y varias personas construyendo, la consistencia
 								no se sostiene con buena voluntad. Armé un sistema documentado con
 								sus fundamentos —<strong>paleta, tipografía, espaciado, efectos,
 								iconografía y avatares</strong>— y catorce familias de componentes.
 							</p>
+							<p>
+								La paleta no se documentó por color sino por <strong>función</strong>:
+								cada valor tiene un nombre que dice para qué sirve —fondo, superficie,
+								borde, texto principal, texto secundario, estado positivo, de
+								advertencia, de error— y no cómo se ve. Así, cuando un color cambia,
+								cambia en un solo lugar y no hay que salir a buscar dónde se usó.
+								Lo mismo con el espaciado: una escala de 4, 8, 12, 16, 24, 32 y 48
+								en vez de números sueltos.
+							</p>
 							<ul>
-								<li>Campos de formulario: input, numérico, con label, textarea, estados de ayuda y error</li>
+								<li>Campos de formulario: input, numérico, con label, textarea, y sus estados de ayuda y error</li>
 								<li>Controles de selección, tablas, filtros y barra de búsqueda</li>
 								<li>Navegación: sidebar, header, breadcrumb y links</li>
 								<li>Tarjetas de historial, barras de progreso, botones y galería</li>
 							</ul>
 							<p>
-								Cada componente está documentado con sus estados y sus reglas de
-								uso, para que desarrollo pueda implementarlo sin volver a preguntar
-								y una pantalla nueva se arme con piezas ya resueltas.
+								Cada componente está armado en Figma con <strong>auto-layout,
+								variantes y propiedades booleanas</strong> para sus estados —normal,
+								hover, foco, deshabilitado, error y carga—, de modo que una pantalla
+								nueva se arma combinando piezas ya resueltas en lugar de dibujar de
+								nuevo.
+							</p>
+							<p>
+								Y está documentado con sus reglas de uso: cuándo corresponde cada
+								variante y cuándo no. Los nombres de componentes y de tokens se
+								acordaron con desarrollo, así el handoff no necesita traducción:
+								lo que en el archivo se llama de una manera se llama igual en el
+								código.
 							</p>
 						</div>
 
 						<figure class="case-figure case-figure--single">
 							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-design-system.png" data-caption="Design system — componentes documentados" data-slot="la imagen del design system">
-								<img src="../images/work/backoffice-design-system.png" alt="Componentes del design system del backoffice" loading="lazy" />
+								<img src="../images/work/backoffice-design-system.png" alt="Componentes del design system con sus variantes y estados" loading="lazy" />
 							</button>
 							<figcaption><b>Componentes.</b> Cada familia con sus variantes y estados documentados.</figcaption>
 						</figure>
@@ -409,34 +449,40 @@
 						<div class="case-prose">
 							<p>
 								La última etapa fue llevar todo a un prototipo de alta fidelidad que
-								se pudiera recorrer de punta a punta: <strong>login con sus estados
-								de error y éxito</strong>, los cuatro módulos de banca persona
-								—solicitudes, registros, dispositivos e informes— y los de banca
-								empresa, más la administración de usuarios y roles.
+								se pudiera recorrer de punta a punta, con los estados de error y de
+								éxito conectados. No una secuencia de pantallas lindas: un archivo
+								que se puede usar, en el que alguien intenta hacer su tarea y se
+								choca —o no— con los mismos obstáculos que tendría en el sistema
+								real.
+							</p>
+							<p>
+								Eso permitió validar antes de construir. Cada ronda de revisión con
+								los perfiles y con desarrollo dejaba una lista de ajustes que volvía
+								al archivo, y el prototipo se versionó como
+								<strong>V1 y V2</strong> para poder comparar decisiones en vez de
+								discutirlas de memoria. La segunda versión existe porque la primera
+								se probó.
 							</p>
 							<p>
 								Una de las mejoras que salió del relevamiento fueron las
-								<strong>acciones en lote</strong>: poder activar, condicionar o
-								rechazar varias solicitudes a la vez en lugar de una por una. Para
-								quien procesa decenas de altas por día, eso cambia la jornada.
+								<strong>acciones en lote</strong>: poder resolver varios registros a
+								la vez en lugar de uno por uno. Parece un detalle de interfaz, pero
+								para quien procesa decenas por día cambia la jornada. Y obligó a
+								repensar el patrón de confirmación, porque confirmar una acción no
+								es lo mismo que confirmar treinta.
 							</p>
-						</div>
-
-						<div class="case-todo">
-							<b>Para completar</b>
 							<p>
-								Si hubo alguna decisión difícil en esta etapa —algo que probaste y
-								cambiaste, una discusión con desarrollo, una restricción técnica que
-								te obligó a rediseñar— contala acá. Es lo que distingue a alguien
-								que diseñó de alguien que dibujó.
+								El prototipo también fue la herramienta de handoff: desarrollo entra
+								al mismo archivo, recorre el flujo, ve los estados y saca las
+								medidas de los componentes ya documentados.
 							</p>
 						</div>
 
 						<figure class="case-figure case-figure--single">
 							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-prototipo.png" data-caption="Prototipo V2 — flujos conectados" data-slot="la imagen del prototipo V2">
-								<img src="../images/work/backoffice-prototipo.png" alt="Prototipo V2 del backoffice con los flujos conectados" loading="lazy" />
+								<img src="../images/work/backoffice-prototipo.png" alt="Vista general del prototipo V2 con los flujos conectados" loading="lazy" />
 							</button>
-							<figcaption><b>Prototipo V2.</b> Los módulos conectados, con sus estados de error y confirmación.</figcaption>
+							<figcaption><b>Prototipo V2.</b> Los flujos conectados, con sus estados de error y confirmación.</figcaption>
 						</figure>
 					</div>
 				</div>
@@ -449,16 +495,31 @@
 				<div class="case-block__head">
 					<span class="case-block__num">06 — Cierre</span>
 					<div>
-						<h2>Resultados y aprendizajes</h2>
+						<h2>Qué me dejó el proyecto</h2>
+
+						<div class="case-prose">
+							<p>
+								Un año en el mismo sistema enseña algo que un proyecto corto no:
+								que el trabajo no termina en la entrega. Los patrones aguantan o no
+								aguantan cuando aparece el caso que nadie previó, y el design system
+								sirve o estorba según qué tan fácil sea sumarle una pieza nueva.
+							</p>
+							<p>
+								Lo que más me sirvió fue haber empezado por la investigación aunque
+								no produjera pantallas. Cada decisión discutible después tuvo dónde
+								apoyarse: no era mi preferencia contra la de otro, era lo que había
+								dicho la gente que usa el sistema todos los días.
+							</p>
+						</div>
 
 						<div class="case-todo">
 							<b>Para completar</b>
 							<p>
-								Esta es la sección más importante de todo el caso. Algunas preguntas
-								para arrancar: ¿el sistema se implementó? ¿bajaron los errores de
-								permisos o el tiempo de procesamiento? ¿qué te dijo el equipo que lo
-								usa? Y si no hay números: ¿qué aprendiste liderando un proyecto de
-								un año con siete perfiles de usuario en juego?
+								Si podés sumar algún resultado sin entrar en información del cliente
+								—cuántos módulos quedaron cubiertos por el sistema, cuánto se acortó
+								el armado de una pantalla nueva, qué te devolvió el equipo que lo
+								usa— va acá. Un dato concreto, aunque sea chico, vale más que un
+								párrafo de adjetivos.
 							</p>
 						</div>
 					</div>
