@@ -377,71 +377,32 @@
 						<div class="case-prose">
 							<p>
 								Con tantas pantallas y varias personas construyendo, la consistencia no
-								se sostiene con buena voluntad. Armé un sistema documentado en dos capas:
-								primero los <strong>fundamentos</strong> —color, tipografía, espaciado e
-								iconografía— y sobre ellos las familias de componentes.
+								se sostiene con buena voluntad. Armé un design system en dos capas: los
+								<strong>fundamentos</strong> —color, tipografía, espaciado e
+								iconografía— y sobre ellos las familias de componentes, cada una con sus
+								variantes, sus estados y la nota de cuándo corresponde usarla.
 							</p>
 							<p>
-								El color no se documentó por tono sino por <strong>función</strong>:
-								además de la escala primaria, la secundaria y los grises, hay una familia
-								semántica —<em>success</em>, <em>danger</em>, <em>info</em> y
-								<em>destructive</em>— con diez pasos cada una. El nombre dice para qué
-								sirve el valor, no cómo se ve, así que cuando algo cambia se cambia en un
-								solo lugar. El espaciado sigue el mismo criterio con cinco tokens
-								—<strong>xs 4, sm 8, md 16, lg 24 y xl 32</strong>— en vez de números
-								sueltos.
-							</p>
-							<p>
-								La tipografía es <strong>Lato</strong>, con una escala cerrada de nueve
-								estilos: dos <em>displays</em>, cuatro niveles de título y tres de
-								párrafo. Cada uno está documentado con su peso, cuerpo, interlineado y
-								tracking, y con lo que más discusiones ahorra: para qué se usa —títulos
-								de sección, encabezados de página, labels, notas aclaratorias—.
+								Está armado en Figma con auto-layout y variantes, y los nombres se
+								acordaron con desarrollo: una pantalla nueva se arma combinando piezas ya
+								resueltas, y el handoff no necesita traducción.
 							</p>
 						</div>
 
-						<figure class="case-figure">
-							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice_ds_estilo.png" data-caption="Design system — fundamentos de color y tipografía" data-slot="la imagen de los fundamentos del design system">
-								<img src="../images/work/backoffice_ds_estilo.png" alt="Fundamentos del design system: escalas de color primario, secundario, grises y semánticos, y la escala tipográfica" loading="lazy" />
-							</button>
-							<figcaption><b>Fundamentos.</b> Las escalas de color con sus valores, la jerarquía tipográfica con la especificación de cada estilo y los tokens de espaciado.</figcaption>
-						</figure>
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice_ds_estilo.png" data-caption="Design system — fundamentos" data-slot="la imagen de los fundamentos del design system">
+									<img src="../images/work/backoffice_ds_estilo.png" alt="Fundamentos del design system: escalas de color y jerarquía tipográfica" loading="lazy" />
+								</button>
+								<figcaption><b>Fundamentos.</b> Color, tipografía y espaciado.</figcaption>
+							</figure>
 
-						<div class="case-prose" style="margin-top:32px">
-							<p>
-								Sobre esos fundamentos se apoyan las familias de componentes:
-							</p>
-							<ul>
-								<li>Campos de formulario: input con label y texto de ayuda, campo numérico, campo de datos y textarea, cada uno con su estado de error</li>
-								<li>Búsqueda y filtros: la barra de búsqueda en sus tres momentos —vacía, escribiendo y completada— y el panel de filtro avanzado</li>
-								<li>Navegación: sidebar, links y barras de progreso</li>
-								<li>Botones y una librería de iconos de línea</li>
-							</ul>
-							<p>
-								Los botones dan la medida de cuánto se documentó: <strong>cinco tamaños
-								por cuatro variantes por cuatro estados</strong> —sólido, contorno, suave
-								y link, cada uno en normal, hover, foco y deshabilitado—. No es exceso de
-								prolijidad: es la forma de que dos personas que nunca hablaron entre sí
-								resuelvan la misma situación de la misma manera.
-							</p>
-						</div>
-
-						<figure class="case-figure">
-							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-ds-component.png" data-caption="Design system — familias de componentes" data-slot="la imagen de los componentes del design system">
-								<img src="../images/work/backoffice-ds-component.png" alt="Familias de componentes del design system: campos de formulario, filtro avanzado, links, sidebar, botones, barra de búsqueda, barras de progreso e iconos" loading="lazy" />
-							</button>
-							<figcaption><b>Componentes.</b> Cada familia con sus variantes y estados, y con la nota de cuándo corresponde usar cada una.</figcaption>
-						</figure>
-
-						<div class="case-prose" style="margin-top:32px">
-							<p>
-								Todo está armado en Figma con <strong>auto-layout, variantes y
-								propiedades</strong>, de modo que una pantalla nueva se arma combinando
-								piezas ya resueltas en lugar de dibujar de nuevo. Y los nombres de
-								componentes y tokens se acordaron con desarrollo, así el handoff no
-								necesita traducción: lo que en el archivo se llama de una manera se llama
-								igual en el código.
-							</p>
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-ds-component.png" data-caption="Design system — componentes" data-slot="la imagen de los componentes del design system">
+									<img src="../images/work/backoffice-ds-component.png" alt="Familias de componentes del design system con sus variantes y estados" loading="lazy" />
+								</button>
+								<figcaption><b>Componentes.</b> Cada familia con sus variantes y estados.</figcaption>
+							</figure>
 						</div>
 					</div>
 				</div>
