@@ -1113,13 +1113,30 @@ p {
 	pointer-events: none;
 }
 
-.mock__title {
+/* Van anidados bajo .mock para ganarle en especificidad a `.project p`, que
+   si no les impone su tamaño de párrafo. */
+.mock .mock__title {
 	position: relative;
 	z-index: 1;
-	font-size: clamp(1.3rem, 3vw, 2rem);
+	margin-top: 0;
+	max-width: none;
+	color: var(--text);
+	font-size: clamp(1.3rem, 2.4vw, 1.75rem);
 	font-weight: 500;
 	letter-spacing: -0.04em;
 	line-height: 1.05;
+}
+
+/* La bajada es descriptiva: va más chica que el título para que la maqueta
+   siga leyéndose como una pantalla y no como un bloque de texto. */
+.mock .mock__sub {
+	position: relative;
+	z-index: 1;
+	margin-top: -6px;
+	max-width: 34ch;
+	color: var(--text-soft);
+	font-size: 14px;
+	line-height: 1.45;
 }
 
 .mock__rows {
