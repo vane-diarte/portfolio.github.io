@@ -294,86 +294,71 @@
 						<div class="case-figures">
 							<figure class="case-figure">
 								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-listado.png" data-caption="Wireframe — patrón de listado" data-slot="el wireframe del patrón de listado">
-									<img src="../images/work/backoffice-wf-listado.png" alt="Wireframe en baja fidelidad de un listado con filtros y acciones" loading="lazy" width="1920" height="1080" />
+									<img src="../images/work/backoffice-wf-listado.png" alt="Wireframe en baja fidelidad de un listado con filtros, búsqueda y selección múltiple" loading="lazy" width="1366" height="768" />
 									<span class="nda-badge">
 										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg>
 										Protegido por NDA
 									</span>
 								</button>
-								<figcaption><b>Patrón de listado.</b> La estructura base: filtros arriba, acciones al alcance y el estado de cada registro visible sin abrirlo.</figcaption>
+								<figcaption><b>Patrón de listado.</b> La estructura de la que salieron casi todas las pantallas: filtros arriba, búsqueda a mano y la barra de selección al pie, que aparece recién cuando hay registros marcados.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-figures case-figures--2">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-detalle.png" data-caption="Wireframe — patrón de detalle" data-slot="el wireframe del patrón de detalle">
-									<img src="../images/work/backoffice-wf-detalle.png" alt="Wireframe en baja fidelidad de una vista de detalle con historial" loading="lazy" width="1920" height="1080" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-seleccion.png" data-caption="Wireframe — filtros en panel lateral" data-slot="el wireframe de los filtros en panel">
+									<img src="../images/work/backoffice-wf-seleccion.png" alt="Wireframe en baja fidelidad de un panel lateral de filtros sobre un listado" loading="lazy" width="1366" height="768" />
 								</button>
-								<figcaption><b>Patrón de detalle.</b> Los datos arriba, el historial debajo: qué pasó, cuándo y quién lo hizo.</figcaption>
+								<figcaption><b>Filtros en panel.</b> Cuando los criterios son muchos salen de la barra superior a un panel lateral, que deja ver la tabla de atrás mientras se arma la búsqueda.</figcaption>
 							</figure>
+
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-ficha.png" data-caption="Wireframe — ficha con información asociada" data-slot="el wireframe de la ficha asociada">
-									<img src="../images/work/backoffice-wf-ficha.png" alt="Wireframe en baja fidelidad de una ficha con información asociada" loading="lazy" width="1920" height="1080" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-detalle.png" data-caption="Wireframe — formulario sobre el listado" data-slot="el wireframe del formulario en contexto">
+									<img src="../images/work/backoffice-wf-detalle.png" alt="Wireframe en baja fidelidad de un formulario en diálogo sobre un listado" loading="lazy" width="1366" height="768" />
 								</button>
-								<figcaption><b>Ficha asociada.</b> El mismo patrón aplicado a la información secundaria de un registro.</figcaption>
+								<figcaption><b>Formulario en contexto.</b> Alta y edición se resuelven sobre el listado, con los campos agrupados por bloque y sin sacar a la persona de donde estaba.</figcaption>
+							</figure>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-confirmacion.png" data-caption="Wireframe — patrón de confirmación" data-slot="el wireframe del patrón de confirmación">
+									<img src="../images/work/backoffice-wf-confirmacion.png" alt="Wireframe en baja fidelidad de un diálogo de confirmación con opciones y campo de comentario" loading="lazy" width="1366" height="768" />
+								</button>
+								<figcaption><b>Confirmación.</b> Nada irreversible pasa sin un paso intermedio, y con lugar para dejar el motivo por escrito.</figcaption>
+							</figure>
+
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-ficha.png" data-caption="Wireframe — detalle con panel lateral" data-slot="el wireframe del detalle con panel lateral">
+									<img src="../images/work/backoffice-wf-ficha.png" alt="Wireframe en baja fidelidad de una vista de detalle con panel lateral fijo" loading="lazy" width="1366" height="768" />
+								</button>
+								<figcaption><b>Detalle con panel.</b> Los datos que no cambian quedan fijos a un costado mientras se recorre el historial de la derecha.</figcaption>
 							</figure>
 						</div>
 
 						<div class="case-prose" style="margin-top:28px">
 							<p>
-								El historial de estados junto al responsable y el comentario resuelve
-								una necesidad concreta que apareció en el relevamiento: poder
-								reconstruir <em>por qué</em> un registro terminó como terminó. En un
-								entorno auditado, esa trazabilidad no es un lujo de diseño; es parte
-								del requerimiento.
+								Ese comentario que se escribe al confirmar es el que después se lee en el
+								historial, junto al responsable y la fecha. Resuelve una necesidad concreta
+								que apareció en el relevamiento: poder reconstruir <em>por qué</em> un
+								registro terminó como terminó. En un entorno auditado esa trazabilidad no
+								es un lujo de diseño, es parte del requerimiento.
 							</p>
 							<p>
-								El resto de los patrones salió del mismo ejercicio. Estas pantallas
-								muestran cómo se resolvieron cuatro problemas que aparecían una y
-								otra vez: <strong>encontrar un registro entre miles, operar sobre
-								varios a la vez, confirmar antes de una acción irreversible y leer
-								el estado general de un vistazo</strong>.
+								Con esos cinco patrones quedaron cubiertos los problemas que aparecían una
+								y otra vez en el relevamiento: <strong>encontrar un registro entre miles,
+								operar sobre varios a la vez y confirmar antes de una acción
+								irreversible</strong>. Faltaba el cuarto, que no es una tarea sino una
+								pregunta: cómo está todo hoy.
 							</p>
 						</div>
 
 						<div class="case-figures">
 							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-busqueda.png" data-caption="Wireframe — búsqueda, filtros y paginación" data-slot="el wireframe de la búsqueda y la paginación">
-									<img src="../images/work/backoffice-wf-busqueda.png" alt="Wireframe en baja fidelidad de un listado con búsqueda, filtros y paginación configurable" loading="lazy" />
+								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-dashboard.png" data-caption="Wireframe — tablero de indicadores" data-slot="el wireframe del tablero de indicadores">
+									<img src="../images/work/backoffice-wf-dashboard.png" alt="Wireframe en baja fidelidad de un tablero con indicadores, gráfico de barras y gráfico de anillo" loading="lazy" width="1366" height="768" />
 								</button>
-								<figcaption><b>Buscar entre miles.</b> Búsqueda, filtros combinables y cantidad de ítems por página: el listado se adapta a cómo trabaja cada perfil, no al revés.</figcaption>
-							</figure>
-						</div>
-
-						<div class="case-figures case-figures--2">
-							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-seleccion.png" data-caption="Wireframe — selección múltiple y acciones en lote" data-slot="el wireframe de la selección múltiple">
-									<img src="../images/work/backoffice-wf-seleccion.png" alt="Wireframe en baja fidelidad de una tabla con selección múltiple y barra de acciones en lote" loading="lazy" />
-								</button>
-								<figcaption><b>Acciones en lote.</b> Al marcar registros aparece la barra de selección: la misma tarea que antes era de a una por vez.</figcaption>
-							</figure>
-
-							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-confirmacion.png" data-caption="Wireframe — patrón de confirmación" data-slot="el wireframe del patrón de confirmación">
-									<img src="../images/work/backoffice-wf-confirmacion.png" alt="Wireframe en baja fidelidad de un diálogo de confirmación sobre un listado" loading="lazy" />
-								</button>
-								<figcaption><b>Confirmación.</b> Nada irreversible pasa sin un paso intermedio, y sin perder de vista el contexto de atrás.</figcaption>
-							</figure>
-						</div>
-
-						<div class="case-figures case-figures--2">
-							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-panel.png" data-caption="Wireframe — detalle con panel lateral" data-slot="el wireframe del detalle con panel lateral">
-									<img src="../images/work/backoffice-wf-panel.png" alt="Wireframe en baja fidelidad de una vista de detalle con panel lateral fijo" loading="lazy" />
-								</button>
-								<figcaption><b>Detalle con panel.</b> Los datos que no cambian quedan fijos a la izquierda mientras se recorre el historial.</figcaption>
-							</figure>
-
-							<figure class="case-figure">
-								<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-wf-tablero.png" data-caption="Wireframe — tablero de indicadores" data-slot="el wireframe del tablero de indicadores">
-									<img src="../images/work/backoffice-wf-tablero.png" alt="Wireframe en baja fidelidad de un tablero con indicadores y gráficos" loading="lazy" />
-								</button>
-								<figcaption><b>Estado de un vistazo.</b> Los indicadores del período arriba y el detalle debajo, para responder sin exportar nada.</figcaption>
+								<figcaption><b>Estado de un vistazo.</b> Los indicadores del período arriba y el detalle debajo: el tablero responde de entrada lo que antes obligaba a exportar y cruzar planillas.</figcaption>
 							</figure>
 						</div>
 					</div>
@@ -477,13 +462,6 @@
 								medidas de los componentes ya documentados.
 							</p>
 						</div>
-
-						<figure class="case-figure case-figure--single">
-							<button class="case-figure__frame" type="button" data-full="../images/work/backoffice-prototipo.png" data-caption="Prototipo V2 — flujos conectados" data-slot="la imagen del prototipo V2">
-								<img src="../images/work/backoffice-prototipo.png" alt="Vista general del prototipo V2 con los flujos conectados" loading="lazy" />
-							</button>
-							<figcaption><b>Prototipo V2.</b> Los flujos conectados, con sus estados de error y confirmación.</figcaption>
-						</figure>
 					</div>
 				</div>
 			</div>
