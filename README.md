@@ -52,27 +52,22 @@ ampliado automáticamente.
 
 ### Subir una imagen que falta en un caso de estudio
 
-En los casos de estudio puede haber figuras que todavía no tienen su archivo.
-En la página se ven como un recuadro punteado que dice **«Falta …»** con el
-nombre exacto que hay que usar, por ejemplo
-`images/work/backoffice-design-system.png`.
+Las figuras se escriben siempre con su `<img>` real apuntando al nombre
+definitivo. Si ese archivo no está en `images/work/`, la página muestra en su
+lugar un recuadro punteado que dice **«Falta …»** con el nombre exacto que
+espera.
 
-Para completarlas **no hace falta tocar el HTML**: alcanza con guardar la
-imagen en `images/work/` con ese nombre y ese formato. El recuadro punteado
-desaparece solo y la figura queda con su epígrafe y su visor ampliado.
-
-Hoy queda una sola pendiente en `proyectos/backoffice-banca.html`:
-
-| Archivo | Qué imagen va |
-| --- | --- |
-| `backoffice-design-system.png` | Los componentes del design system con sus variantes y estados |
+Por eso agregar una imagen **no requiere tocar el HTML**: alcanza con guardarla
+en `images/work/` con ese nombre. El recuadro desaparece solo y la figura queda
+con su epígrafe y su visor ampliado.
 
 Exportar desde Figma en PNG a 2x, con un ancho de entre 1600 y 2000 px.
 
-> **Antes de exportar:** el proyecto está bajo acuerdo de confidencialidad y el
-> caso está escrito en términos genéricos a propósito. Conviene revisar que en
-> la captura no queden nombres de módulos del cliente, datos de personas ni
-> marcas, y reemplazarlos por datos de ejemplo en Figma antes de exportar.
+> **Antes de exportar:** el caso del sistema interno está bajo acuerdo de
+> confidencialidad y escrito en términos genéricos a propósito. Conviene
+> revisar que en la captura no queden nombres de módulos del cliente, datos de
+> personas ni marcas, y reemplazarlos por datos de ejemplo en Figma antes de
+> exportar.
 
 ## Accesibilidad y rendimiento
 
