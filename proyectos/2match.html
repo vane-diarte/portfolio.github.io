@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>2match — Del concepto a una plataforma en producción | Vanessa Diarte</title>
+
+	<meta name="description" content="Caso de estudio: el rebranding de Gaudium a 2match y el rediseño de la página de una plataforma de equipos freelance, de la maqueta a los clientes reales." />
+	<meta name="author" content="Vanessa Diarte" />
+	<meta name="theme-color" content="#0a0b0d" />
+	<link rel="canonical" href="https://vane-diarte.github.io/portfolio.github.io/proyectos/2match.html" />
+
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="es_PY" />
+	<meta property="og:title" content="2match — Del concepto a una plataforma en producción" />
+	<meta property="og:description" content="De Gaudium a 2match: un nombre que dice lo que hace, una promesa con plazo y una página sostenida por clientes reales." />
+	<meta property="og:image" content="https://vane-diarte.github.io/portfolio.github.io/images/work/vane-1.png" />
+	<meta property="og:url" content="https://vane-diarte.github.io/portfolio.github.io/proyectos/2match.html" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<link rel="icon" href="../images/vanediarte.png" type="image/png" />
+	<link rel="apple-touch-icon" href="../images/vanediarte.png" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400..700&family=Inter+Tight:ital,wght@0,300..700;1,400&family=Lora:ital,wght@1,400..600&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../assets/css/style.css" />
+
+	<script>
+		// Aplicado antes del render para evitar parpadeo de tema.
+		(function () {
+			try {
+				var saved = localStorage.getItem("vd-theme");
+				if (saved) document.documentElement.dataset.theme = saved;
+			} catch (e) {}
+		})();
+	</script>
+</head>
+
+<body>
+	<a class="skip-link" href="#caso">Saltar al contenido</a>
+
+	<!-- Fondo ambiental -->
+	<div class="fx" aria-hidden="true">
+		<div class="fx__glow fx__glow--1"></div>
+		<div class="fx__glow fx__glow--2"></div>
+		<div class="fx__grain"></div>
+	</div>
+
+	<!-- ============ NAV ============ -->
+	<header class="nav" id="nav">
+		<div class="nav__inner">
+			<a class="nav__brand" href="../index.html">
+				<span class="nav__mark" aria-hidden="true">VD</span>
+				<span>Vanessa Diarte</span>
+			</a>
+
+			<nav aria-label="Navegación principal">
+				<ul class="nav__links">
+					<li><a href="../index.html#inicio">Inicio</a></li>
+					<li><a href="../index.html#proyectos">Proyectos</a></li>
+					<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				</ul>
+			</nav>
+
+			<div class="nav__actions">
+				<button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro">
+					<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+					<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.4A8.6 8.6 0 1 1 9.6 3.5a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+				</button>
+
+				<button class="icon-btn nav__burger" id="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+				</button>
+
+				<a class="btn btn--primary btn--sm nav__cta" href="../index.html#contacto">
+					Trabajemos juntos
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+			</div>
+		</div>
+
+		<div class="nav__drawer" id="nav-drawer">
+			<ul>
+				<li><a href="../index.html#inicio">Inicio</a></li>
+				<li><a href="../index.html#proyectos">Proyectos</a></li>
+				<li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+				<li><a href="../index.html#herramientas">Herramientas</a></li>
+			</ul>
+			<a class="btn btn--primary" href="../index.html#contacto">Trabajemos juntos</a>
+		</div>
+	</header>
+
+	<main id="caso">
+		<!-- ============ PORTADA ============ -->
+		<section class="case-hero">
+			<div class="container">
+				<a class="case-back" href="../index.html#proyectos">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+					Volver a proyectos
+				</a>
+
+				<div class="project__tags">
+					<span class="tag tag--accent">UX/UI</span>
+					<span class="tag">Rebranding</span>
+					<span class="tag">Landing de producto</span>
+					<span class="tag">Contenido</span>
+				</div>
+
+				<h1>2match: del concepto a una <span class="highlight">plataforma en producción</span></h1>
+
+				<p class="case-hero__lead">
+					Una plataforma que arma equipos freelance para empresas. Nació como Gaudium,
+					con contenido de demostración y una promesa todavía difusa, y se convirtió en
+					2match: un nombre que dice lo que hace, una propuesta con un plazo concreto y
+					una página sostenida por clientes reales.
+				</p>
+
+				<p class="case-links">
+					<a class="link-arrow" href="https://2match.work" target="_blank" rel="noopener">
+						Ver el sitio en vivo
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+					</a>
+				</p>
+
+				<dl class="case-meta">
+					<div>
+						<dt>Mi rol</dt>
+						<dd><span class="case-fill">confirmá tu rol</span></dd>
+					</div>
+					<div>
+						<dt>Alcance</dt>
+						<dd>Rebranding, arquitectura de la página, UI y contenido</dd>
+					</div>
+					<div>
+						<dt>Producto</dt>
+						<dd>Plataforma de equipos freelance</dd>
+					</div>
+					<div>
+						<dt>Año</dt>
+						<dd><span class="case-fill">poné el año</span></dd>
+					</div>
+				</dl>
+
+				<div class="case-todo">
+					<b>Antes de publicar — completá esto</b>
+					<p>
+						Escribí este caso a partir de las dos versiones del sitio, así que
+						describe el trabajo que se ve, no quién hizo cada parte. Ajustá «Mi rol»
+						y «Alcance» a lo que hiciste vos: si diseñaste, si además escribiste el
+						contenido, si trabajaste con un equipo y quién más participó. Es el dato
+						que primero busca alguien que te está evaluando.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 01 · CONTEXTO ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">01 — Contexto</span>
+					<div>
+						<h2>Dos públicos opuestos en una sola página</h2>
+
+						<div class="case-prose">
+							<p>
+								2match conecta empresas con profesionales independientes de
+								publicidad, diseño y tecnología. Como todo marketplace, tiene un
+								problema de comunicación antes que de interfaz: <strong>necesita
+								convencer a dos públicos que buscan cosas contrarias</strong>. La
+								empresa quiere saber que no va a ser un dolor de cabeza; el
+								freelancer quiere saber que hay trabajo.
+							</p>
+							<p>
+								Separarlos en dos sitios era la salida fácil, y la peor: duplica el
+								mantenimiento y deja a cada visitante viendo la mitad de la prueba
+								de que el otro lado existe. La decisión fue resolverlo dentro de la
+								misma página, con un <strong>selector de público</strong> ubicado
+								arriba de todo —incluso por encima del titular— para que quien
+								llega elija desde qué lado quiere leer antes de leer nada.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 02 · REBRANDING ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">02 — Rebranding</span>
+					<div>
+						<h2>De Gaudium a 2match</h2>
+
+						<div class="case-prose">
+							<p>
+								La primera versión se llamaba <strong>Gaudium</strong>: una palabra
+								en latín, linda de decir y muda sobre el negocio. El cambio de
+								nombre fue la decisión de fondo, y arrastró a todo lo demás.
+								<strong>2match</strong> dice lo que la plataforma hace, se escribe
+								como se busca y le da al logotipo un punto de apoyo: el «2» se lleva
+								el degradado y el resto de la marca queda en negro.
+							</p>
+							<p>
+								El titular siguió el mismo camino. Gaudium abría con
+								<em>«Hacé match con el mejor talento freelance»</em>, que describe
+								el mecanismo; 2match abre con <em>«Tu dream team freelance en 48
+								horas»</em>, que promete un resultado y le pone plazo. Es la
+								diferencia entre contar cómo funciona el producto y decir qué gana
+								quien lo usa.
+							</p>
+							<p>
+								Esa claridad permitió sacar cosas. La navegación pasó de cuatro
+								ítems a dos, los dos botones del hero quedaron en
+								<strong>uno solo</strong>, y el fondo de ondas y partículas que
+								competía con el texto se fue a blanco. El color no desapareció: se
+								concentró donde trabaja —el logotipo, los números, los iconos— en
+								vez de estar repartido por toda la pantalla.
+							</p>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/2match-antes.jpg" data-caption="La portada de la versión anterior" data-slot="la captura de la versión anterior">
+									<img src="../images/work/2match-antes.jpg" alt="Portada de la versión anterior del sitio, con fondo decorativo y dos botones" loading="lazy" />
+								</button>
+								<figcaption><b>Antes.</b> Titular sobre el mecanismo, dos llamados a la acción y un fondo que le disputa el protagonismo al texto.</figcaption>
+							</figure>
+
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/2match-despues.jpg" data-caption="La portada actual" data-slot="la captura de la portada actual">
+									<img src="../images/work/2match-despues.jpg" alt="Portada actual del sitio, con el selector de público, un titular con plazo y un solo botón" loading="lazy" />
+								</button>
+								<figcaption><b>Después.</b> El selector de público arriba, una promesa con plazo y un único camino hacia adelante.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 03 · CONTENIDO ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">03 — Contenido</span>
+					<div>
+						<h2>Reemplazar la maqueta por pruebas</h2>
+
+						<div class="case-prose">
+							<p>
+								El cambio más grande no se ve en la forma sino en lo que dice la
+								página. Gaudium mostraba lo que muestra cualquier sitio recién
+								armado: logos de <em>Acme Inc.</em> repetidos y cuatro casos
+								inventados con nombres de ejemplo. Una página así puede estar bien
+								diseñada y no convencer a nadie, porque no prueba nada.
+							</p>
+							<p>
+								En 2match esa capa se reemplazó entera. Los logos son de clientes
+								reales; los casos pasaron de cuatro genéricos a
+								<strong>catorce con nombre propio</strong>, cada uno resumido en una
+								línea que dice qué se resolvió —una campaña, un chatbot que agenda,
+								una identidad de marca, un mes récord de ventas—; y se sumaron
+								cuatro testimonios con nombre, cargo y empresa.
+							</p>
+							<p>
+								Las tarjetas de talento siguieron la misma lógica. Antes eran
+								bloques de texto con un párrafo descriptivo cada uno; ahora son
+								<strong>fichas con foto</strong> que dejan solo el nombre, el rol y
+								las herramientas, y se mueven en un carrusel continuo. Se lee más
+								rápido y se parece más a lo que en realidad se está eligiendo:
+								personas.
+							</p>
+							<p>
+								Hasta los números trabajan a favor. Los tres indicadores del
+								encabezado se animan al entrar en pantalla, y el del tiempo de match
+								marca <strong>44 horas</strong>: menos que las 48 que promete el
+								titular. La promesa no se queda sola, la respalda el dato.
+							</p>
+						</div>
+
+						<div class="case-figures case-figures--2">
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/2match-casos.jpg" data-caption="Casos de clientes" data-slot="la captura de los casos de clientes">
+									<img src="../images/work/2match-casos.jpg" alt="Sección de casos de clientes, cada uno con foto del proyecto y su resultado en una línea" loading="lazy" />
+								</button>
+								<figcaption><b>Casos.</b> Cada cliente con nombre propio, la foto del proyecto y lo que se resolvió, en una línea.</figcaption>
+							</figure>
+
+							<figure class="case-figure">
+								<button class="case-figure__frame" type="button" data-full="../images/work/2match-talento.jpg" data-caption="Fichas de talento" data-slot="la captura de las fichas de talento">
+									<img src="../images/work/2match-talento.jpg" alt="Fichas de talento con foto, nombre, rol y herramientas, en un carrusel continuo" loading="lazy" />
+								</button>
+								<figcaption><b>Talento.</b> Foto, nombre, rol y herramientas: lo mínimo para decidir, en un carrusel que no se detiene.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ 04 · CIERRE ============ -->
+		<section class="case-block">
+			<div class="container">
+				<div class="case-block__head">
+					<span class="case-block__num">04 — Cierre</span>
+					<div>
+						<h2>Qué quedó</h2>
+
+						<div class="case-prose">
+							<p>
+								2match está en producción y es un sitio que se sostiene solo: una
+								promesa con plazo, tres modalidades de trabajo explicadas en sus
+								propios términos, un catálogo de perfiles que se recorre sin
+								esfuerzo y una pared de clientes que respalda todo lo anterior.
+							</p>
+							<p>
+								Lo que más me quedó del proyecto es que el rediseño más efectivo no
+								fue visual. Cambiar el nombre, prometer un plazo y reemplazar los
+								datos de relleno por pruebas reales movió la aguja más que
+								cualquier decisión de color o de tipografía. El diseño puso todo eso
+								en orden; pero lo que convence es tener algo verdadero que mostrar.
+							</p>
+						</div>
+
+						<div class="case-todo">
+							<b>Para completar</b>
+							<p>
+								Si tenés algún número del después —consultas que llegan, tasa de
+								conversión, cuántos proyectos entraron por la web— va acá. Y si el
+								proyecto sigue creciendo, contá qué viene: la sección de
+								freelancers, el blog, las páginas de cada caso.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ============ SIGUIENTE ============ -->
+	<section class="case-next">
+		<div class="container case-next__inner">
+			<div>
+				<h3>¿Te interesa cómo trabajo?</h3>
+				<p>Escribime y charlamos sobre tu proyecto.</p>
+			</div>
+			<div class="hero__actions" style="margin-top:0">
+				<a class="btn btn--primary" href="../index.html#contacto">
+					Contactarme
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+				</a>
+				<a class="btn btn--ghost" href="backoffice-banca.html">Ver el caso del sistema interno</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="footer">
+		<div class="container footer__inner">
+			<p>© <span id="year">2026</span> Vanessa Diarte — Diseñado y desarrollado con cariño desde Paraguay.</p>
+			<a class="to-top" href="#caso">
+				Volver arriba
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+			</a>
+		</div>
+	</footer>
+
+	<!-- ============ LIGHTBOX ============ -->
+	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la imagen">
+		<button class="lightbox__close" id="lightbox-close" type="button" aria-label="Cerrar">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+		</button>
+		<img id="lightbox-img" alt="" />
+		<p class="lightbox__caption" id="lightbox-caption"></p>
+	</div>
+
+	<script src="../assets/js/app.js" defer></script>
+</body>
+</html>
